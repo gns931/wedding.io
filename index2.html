@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:"Georgia","Noto Serif KR",serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box div:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(138,109,89,0.08);
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.gallery img{
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 10px 28px rgba(0,0,0,0.08);
+    transition:transform 0.4s ease, opacity 0.4s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+    opacity:0.92;
+}
+
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery img{height:360px;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop"
+             alt="웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+            <div class="calendar-header"><span>2026. 12</span></div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+                <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+                <div class="wedding-day">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+                <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+                <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div class="christmas">25</div><div>26</div>
+                <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div></div><div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+        <div class="info-list">
+            <div class="info-row"><strong>일시</strong><span>2026.12.6 일요일 오후 3시</span></div>
+            <div class="info-row"><strong>장소</strong><span>라비에벨 웨딩홀 9층 단독홀</span></div>
+            <div class="info-row"><strong>주소</strong><span>인천광역시 ○○구 ○○로 123</span></div>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">TIMELINE</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">14:30</div>
+                <div class="timeline-title">하객 입장</div>
+                <div class="timeline-desc">여유롭게 도착하셔서 식전 인사를 나눠주세요.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">15:00</div>
+                <div class="timeline-title">예식 시작</div>
+                <div class="timeline-desc">소중한 순간을 함께 축복해주세요.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">15:30</div>
+                <div class="timeline-title">사진 촬영</div>
+                <div class="timeline-desc">가족, 친지, 친구 순으로 촬영 예정입니다.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">16:00</div>
+                <div class="timeline-title">식사 안내</div>
+                <div class="timeline-desc">연회장에서 편안히 식사하실 수 있습니다.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">CONTACT</h2>
+
+        <div class="contact-grid">
+            <button class="btn" onclick="location.href='tel:01012345678'">신랑에게 연락</button>
+            <button class="btn" onclick="location.href='tel:01087654321'">신부에게 연락</button>
+        </div>
+
+        <div class="family-contact">
+            <div class="family-title">혼주 연락처</div>
+
+            <div class="family-row">
+                <span>신랑 아버지</span>
+                <button class="btn" onclick="location.href='tel:01011112222'">연락</button>
+            </div>
+            <div class="family-row">
+                <span>신랑 어머니</span>
+                <button class="btn" onclick="location.href='tel:01033334444'">연락</button>
+            </div>
+            <div class="family-row">
+                <span>신부 아버지</span>
+                <button class="btn" onclick="location.href='tel:01055556666'">연락</button>
+            </div>
+            <div class="family-row">
+                <span>신부 어머니</span>
+                <button class="btn" onclick="location.href='tel:01077778888'">연락</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" onclick="openImage(this.src)">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" onclick="openImage(this.src)">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" onclick="openImage(this.src)">
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">LOCATION</h2>
+        <p class="desc">인천광역시 ○○구 ○○로 123</p>
+        <button class="btn fill" onclick="openMap()">카카오맵 열기</button>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">PARKING</h2>
+        <div class="info-list">
+            <div class="info-row"><strong>주차 1</strong><span>웨딩홀 건물 주차장</span></div>
+            <button class="btn" onclick="openParkingMap('wedding')">웨딩홀 건물 주차장 지도 보기</button>
+
+            <br><br>
+
+            <div class="info-row"><strong>주차 2</strong><span>인근 주차장</span></div>
+            <button class="btn" onclick="openParkingMap('public')">하이그린파킹 주차장 지도 보기</button>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">TRANSPORTATION</h2>
+        <div class="transport-box">
+            <div class="transport-item">
+                <strong>지하철</strong>
+                <p>○○역 1번 출구에서 도보 약 5분</p>
+            </div>
+            <div class="transport-item">
+                <strong>버스</strong>
+                <p>○○정류장 하차 후 도보 약 3분<br>간선 00번, 지선 00번 이용</p>
+            </div>
+            <div class="transport-item">
+                <strong>자가용</strong>
+                <p>내비게이션에 ‘라비에벨 웨딩홀’ 또는 ‘하이그린파킹 상동점’을 검색해주세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <h2 class="section-title">ACCOUNT</h2>
+
+        <div class="account-box">
+            <strong>신랑측 계좌</strong>
+            <p>국민은행 123456-12-123456<br>정영훈</p>
+            <button class="btn" onclick="copyText('국민은행 123456-12-123456 정영훈')">계좌번호 복사</button>
+        </div>
+
+        <div class="account-box">
+            <strong>신부측 계좌</strong>
+            <p>신한은행 110-123-456789<br>김재인</p>
+            <button class="btn" onclick="copyText('신한은행 110-123-456789 김재인')">계좌번호 복사</button>
+        </div>
+    </section>
+
+    <section class="fade-up">
+        <p class="ending-text">
+            바쁘신 걸음에도 함께해주시는 모든 마음<br>
+            오래도록 소중히 간직하겠습니다.<br><br>
+            저희 두 사람의 새로운 시작을<br>
+            따뜻한 마음으로 축복해주세요.
+        </p>
+    </section>
+
+    <div class="footer">
+        Thank you for celebrating with us
+    </div>
+
+</div>
+
+<div class="image-modal" id="imageModal" onclick="closeImage()">
+    <img id="modalImg">
+</div>
+
+<script>
+function copyText(text){
+    navigator.clipboard.writeText(text).then(function(){
+        alert("계좌번호가 복사되었습니다.");
+    });
+}
+
+function openImage(src){
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImg").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+
+var fadeItems = document.querySelectorAll(".fade-up");
+
+function checkFade(){
+    for(var i = 0; i < fadeItems.length; i++){
+        var item = fadeItems[i];
+        var rect = item.getBoundingClientRect();
+
+        if(rect.top < window.innerHeight - 80){
+            item.classList.add("show");
+        }
+    }
+}
+
+window.addEventListener("scroll", checkFade);
+window.addEventListener("load", checkFade);
+
+window.addEventListener("scroll", function(){
+    var scrollTop = document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = (scrollTop / height) * 100;
+    document.getElementById("progressBar").style.width = progress + "%";
+});
+
+function createFlower(){
+    var flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerHTML = "❦";
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (8 + Math.random() * 6) + "s";
+    flower.style.fontSize = (12 + Math.random() * 8) + "px";
+    flower.style.opacity = 0.35 + Math.random() * 0.35;
+
+    document.body.appendChild(flower);
+
+    setTimeout(function(){
+        flower.remove();
+    }, 15000);
+}
+
+setInterval(createFlower, 1400);
+
+function openParkingMap(type){
+    var url = "";
+
+    if(type === "wedding"){
+        url = "https://map.kakao.com/?urlX=445668.0000000028&urlY=1113103.0000000005&urlLevel=3&itemId=98780839&q=%EB%B6%80%EC%B2%9C%20%EB%9D%BC%EB%B9%84%EC%97%90%EB%B2%A8%EC%9B%A8%EB%94%A9&srcid=98780839&map_type=TYPE_MAP";
+    }
+
+    if(type === "public"){
+        url = "https://map.kakao.com/?urlX=445793.00000000105&urlY=1113213.0000000005&urlLevel=3&itemId=264047&q=%ED%95%98%EC%9D%B4%EA%B7%B8%EB%A6%B0%ED%8C%8C%ED%82%B9%20%EC%83%81%EB%8F%99%EC%A0%90&srcid=264047&map_type=TYPE_MAP";
+    }
+
+    window.open(url, "_blank");
+}
+
+function openMap(){
+    window.open("https://map.kakao.com/?urlX=445668.0000000028&urlY=1113103.0000000005&urlLevel=3&itemId=98780839&q=%EB%B6%80%EC%B2%9C%20%EB%9D%BC%EB%B9%84%EC%97%90%EB%B2%A8%EC%9B%A8%EB%94%A9&srcid=98780839&map_type=TYPE_MAP", "_blank");
+}
+
+function updateWeddingCount(){
+    var weddingDate = new Date("2026-12-06T15:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = weddingDate - now;
+
+    if(distance <= 0){
+        document.getElementById("countDay").innerText = "0";
+        document.getElementById("countHour").innerText = "0";
+        document.getElementById("countMin").innerText = "0";
+        document.getElementById("countSec").innerText = "0";
+        return;
+    }
+
+    document.getElementById("countDay").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countHour").innerText = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    document.getElementById("countMin").innerText = Math.floor((distance / (1000 * 60)) % 60);
+    document.getElementById("countSec").innerText = Math.floor((distance / 1000) % 60);
+}
+
+updateWeddingCount();
+setInterval(updateWeddingCount, 1000);
+</script>
+
+</body>
+</html>
