@@ -5,22 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>영훈 · 재인 모바일 청첩장</title>
+
 <meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시 · 라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/thumbnail.jpg">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
 
-<meta property="og:title"
-      content="영훈 ♥ 재인 결혼합니다">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
-<meta property="og:description"
-      content="2026년 12월 6일 일요일 오후 3시 · 라비에벨 웨딩홀">
-
-<meta property="og:image"
-      content="https://gns931.github.io/wedding.io/images/thumbnail.jpg">
-
-<meta property="og:url"
-      content="https://gns931.github.io/wedding.io/">
-
-<meta name="twitter:card"
-      content="summary_large_image">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -29,7 +23,7 @@ html,body{
     overflow-x:hidden;
     background:#faf8f5;
     color:#333;
-    font-family: 'Cormorant Garamond', serif;
+    font-family:"Georgia","Noto Serif KR",serif;
     line-height:1.9;
     font-size:17px;
 }
@@ -169,11 +163,6 @@ section{
     padding:16px 4px;
     background:#fffdfb;
     transition:0.3s ease;
-}
-
-.count-box div:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 20px rgba(138,109,89,0.08);
 }
 
 .count-box strong{
@@ -691,6 +680,10 @@ section{
     </section>
 
     <section class="fade-up">
+        <button class="btn fill" onclick="shareKakao()">카카오톡으로 청첩장 공유하기</button>
+    </section>
+
+    <section class="fade-up">
         <h2 class="section-title">ACCOUNT</h2>
 
         <div class="account-box">
@@ -726,6 +719,36 @@ section{
 </div>
 
 <script>
+/*
+    카카오 개발자센터에서 JavaScript 키 발급 후 아래에 넣으세요.
+    예: Kakao.init('abc123...');
+*/
+Kakao.init('4a8638f53f4ea351b62596155bd280bb');
+
+function shareKakao(){
+    Kakao.Share.sendDefault({
+        objectType:'feed',
+        content:{
+            title:'영훈 ♥ 재인 결혼합니다',
+            description:'2026년 12월 6일 일요일 오후 3시 · 라비에벨 웨딩홀',
+            imageUrl:'https://gns931.github.io/wedding.io/images/thumbnail.jpg',
+            link:{
+                mobileWebUrl:'https://gns931.github.io/wedding.io/',
+                webUrl:'https://gns931.github.io/wedding.io/'
+            }
+        },
+        buttons:[
+            {
+                title:'모바일 청첩장 보기',
+                link:{
+                    mobileWebUrl:'https://gns931.github.io/wedding.io/',
+                    webUrl:'https://gns931.github.io/wedding.io/'
+                }
+            }
+        ]
+    });
+}
+
 function copyText(text){
     navigator.clipboard.writeText(text).then(function(){
         alert("계좌번호가 복사되었습니다.");
