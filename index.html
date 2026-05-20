@@ -427,9 +427,55 @@ section{
 .image-modal img{
     width:100%;
     max-width:760px;
-    max-height:90vh;
+    max-height:86vh;
     object-fit:contain;
     border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
 }
 
 .transport-box{
@@ -714,8 +760,15 @@ section{
 
 </div>
 
-<div class="image-modal" id="imageModal" onclick="closeImage()">
+<div class="image-modal" id="imageModal">
+    <button class="modal-close" onclick="closeImage()">×</button>
+    <button class="modal-arrow left" onclick="prevImage(event)">‹</button>
+
     <img id="modalImg">
+
+    <button class="modal-arrow right" onclick="nextImage(event)">›</button>
+
+    <div class="modal-count" id="modalCount"></div>
 </div>
 
 <script>
@@ -755,14 +808,94 @@ function copyText(text){
     });
 }
 
-function openImage(src){
+var galleryImages = [];
+var currentImageIndex = 0;
+
+function initGallery(){
+    galleryImages = document.querySelectorAll(".gallery img");
+
+    for(var i = 0; i < galleryImages.length; i++){
+        galleryImages[i].setAttribute("data-index", i);
+        galleryImages[i].onclick = function(){
+            openImage(parseInt(this.getAttribute("data-index"), 10));
+        };
+    }
+}
+
+function openImage(index){
+    currentImageIndex = index;
+
     document.getElementById("imageModal").style.display = "flex";
-    document.getElementById("modalImg").src = src;
+    updateModalImage();
+}
+
+function updateModalImage(){
+    document.getElementById("modalImg").src = galleryImages[currentImageIndex].src;
+    document.getElementById("modalCount").innerText =
+        (currentImageIndex + 1) + " / " + galleryImages.length;
 }
 
 function closeImage(){
     document.getElementById("imageModal").style.display = "none";
 }
+
+function prevImage(event){
+    event.stopPropagation();
+
+    currentImageIndex--;
+
+    if(currentImageIndex < 0){
+        currentImageIndex = galleryImages.length - 1;
+    }
+
+    updateModalImage();
+}
+
+function nextImage(event){
+    event.stopPropagation();
+
+    currentImageIndex++;
+
+    if(currentImageIndex >= galleryImages.length){
+        currentImageIndex = 0;
+    }
+
+    updateModalImage();
+}
+
+document.getElementById("imageModal").addEventListener("click", function(e){
+    if(e.target.id === "imageModal"){
+        closeImage();
+    }
+});
+
+document.addEventListener("keydown", function(e){
+    if(document.getElementById("imageModal").style.display !== "flex"){
+        return;
+    }
+
+    if(e.key === "ArrowLeft"){
+        currentImageIndex--;
+        if(currentImageIndex < 0){
+            currentImageIndex = galleryImages.length - 1;
+        }
+        updateModalImage();
+    }
+
+    if(e.key === "ArrowRight"){
+        currentImageIndex++;
+        if(currentImageIndex >= galleryImages.length){
+            currentImageIndex = 0;
+        }
+        updateModalImage();
+    }
+
+    if(e.key === "Escape"){
+        closeImage();
+    }
+});
+
+window.addEventListener("load", initGallery);
 
 var fadeItems = document.querySelectorAll(".fade-up");
 
