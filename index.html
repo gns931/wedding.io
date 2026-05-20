@@ -303,7 +303,53 @@ section{
 .btn:active{
     transform:scale(0.97);
 }
+.section-spacing{
+    margin-top:26px;
+}
 
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -717,9 +763,11 @@ section{
 
     </div>
 
+    <div class="map-button-wrap">
     <button class="btn fill" onclick="openMap()">
         카카오맵 길찾기
     </button>
+</div>
 </section>
 
     <section class="fade-up">
@@ -747,7 +795,7 @@ section{
         </div>
 
     </div>
-
+<div class="map-button-wrap">
     <button class="btn"
             onclick="openParkingMap('wedding')">
         웨딩홀 주차장 지도 보기
@@ -757,6 +805,7 @@ section{
             onclick="openParkingMap('public')">
         추가 주차장 지도 보기
     </button>
+</div>
 </section>
 
     <section class="fade-up">
