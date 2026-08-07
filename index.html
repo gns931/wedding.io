@@ -18,17 +18,19 @@
 /* ===== Premium v3 interactions ===== */
 
 window.addEventListener("load", function(){
-    var loadingScreen = document.getElementById("loadingScreen");
 
-    if(loadingScreen){
-        setTimeout(function(){
-            loadingScreen.classList.add("hide");
-        }, 1400);
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    setTimeout(function(){
+
+        loadingScreen.style.opacity = "0";
 
         setTimeout(function(){
-            loadingScreen.remove();
-        }, 2300);
-    }
+            loadingScreen.style.display = "none";
+        },800);
+
+    },1500);
+
 });
 
 var topButton = document.getElementById("topButton");
