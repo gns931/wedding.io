@@ -626,6 +626,6342 @@ section{
 
 <div class="wrap">
 
+<!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+
+    <!-- 5. 예식 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>일시</strong>
+                <span>
+                    2026년 12월 6일 일요일<br>
+                    오후 3시
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>장소</strong>
+                <span>
+                    라비에벨 웨딩홀<br>
+                    9층 단독홀
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+
+    <!-- 5. 예식 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>일시</strong>
+                <span>
+                    2026년 12월 6일 일요일<br>
+                    오후 3시
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>장소</strong>
+                <span>
+                    라비에벨 웨딩홀<br>
+                    9층 단독홀
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. 위치 -->
+    <section class="fade-up">
+        <h2 class="section-title">LOCATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>웨딩홀</strong>
+                <span>라비에벨 웨딩홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>예식홀</strong>
+                <span>9층 단독홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층 라비에벨웨딩
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>연락처</strong>
+                <span>032-325-2000</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+            <button class="btn fill" onclick="openMap()">
+                카카오맵 길찾기
+            </button>
+        </div>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+
+    <!-- 5. 예식 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>일시</strong>
+                <span>
+                    2026년 12월 6일 일요일<br>
+                    오후 3시
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>장소</strong>
+                <span>
+                    라비에벨 웨딩홀<br>
+                    9층 단독홀
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. 위치 -->
+    <section class="fade-up">
+        <h2 class="section-title">LOCATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>웨딩홀</strong>
+                <span>라비에벨 웨딩홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>예식홀</strong>
+                <span>9층 단독홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층 라비에벨웨딩
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>연락처</strong>
+                <span>032-325-2000</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+            <button class="btn fill" onclick="openMap()">
+                카카오맵 길찾기
+            </button>
+        </div>
+    </section>
+
+
+    <!-- 7. 주차 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">PARKING</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>주차안내</strong>
+                <span>세이브존 B2 ~ B4 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>추가주차</strong>
+                <span>하이파킹 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주차지원</strong>
+                <span>2시간 무료주차</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+
+            <button class="btn"
+                    onclick="openParkingMap('wedding')">
+                웨딩홀 주차장 지도 보기
+            </button>
+
+            <button class="btn"
+                    onclick="openParkingMap('public')">
+                추가 주차장 지도 보기
+            </button>
+
+        </div>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+
+    <!-- 5. 예식 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>일시</strong>
+                <span>
+                    2026년 12월 6일 일요일<br>
+                    오후 3시
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>장소</strong>
+                <span>
+                    라비에벨 웨딩홀<br>
+                    9층 단독홀
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. 위치 -->
+    <section class="fade-up">
+        <h2 class="section-title">LOCATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>웨딩홀</strong>
+                <span>라비에벨 웨딩홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>예식홀</strong>
+                <span>9층 단독홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층 라비에벨웨딩
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>연락처</strong>
+                <span>032-325-2000</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+            <button class="btn fill" onclick="openMap()">
+                카카오맵 길찾기
+            </button>
+        </div>
+    </section>
+
+
+    <!-- 7. 주차 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">PARKING</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>주차안내</strong>
+                <span>세이브존 B2 ~ B4 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>추가주차</strong>
+                <span>하이파킹 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주차지원</strong>
+                <span>2시간 무료주차</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+
+            <button class="btn"
+                    onclick="openParkingMap('wedding')">
+                웨딩홀 주차장 지도 보기
+            </button>
+
+            <button class="btn"
+                    onclick="openParkingMap('public')">
+                추가 주차장 지도 보기
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- 8. 오시는 길 -->
+    <section class="fade-up">
+        <h2 class="section-title">TRANSPORTATION</h2>
+
+        <div class="transport-box">
+
+            <div class="transport-item">
+                <strong>지하철</strong>
+                <p>
+                    7호선 상동역 7번·8번 출구와 바로 연결<br>
+                    1호선 송내역 2번 출구에서 버스 약 15분
+                </p>
+            </div>
+
+            <div class="transport-item">
+                <strong>버스</strong>
+                <p>
+                    상동역7번출구·세이브존 하차<br>
+                    5-4, 16, 33, 50-1, 83
+                    <br><br>
+
+                    상동역8번출구·세이브존 하차<br>
+                    6-2, 23-2, 24, 37, 52, 59, 66, 70, 87
+                </p>
+            </div>
+
+            <div class="transport-item">
+                <strong>자가용</strong>
+                <p>
+                    네비게이션에<br>
+                    ‘라비에벨웨딩’ 또는<br>
+                    ‘세이브존 상동점’ 검색
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
+    <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
+
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
+    </section>
+
+
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 웨딩 갤러리 -->
+    <section class="fade-up">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+            <img src="images/1.jpg" alt="웨딩사진 1">
+            <img src="images/2.jpg" alt="웨딩사진 2">
+            <img src="images/3.jpg" alt="웨딩사진 3">
+            <img src="images/4.jpg" alt="웨딩사진 4">
+            <img src="images/5.jpg" alt="웨딩사진 5">
+            <img src="images/6.jpg" alt="웨딩사진 6">
+            <img src="images/7.jpg" alt="웨딩사진 7">
+            <img src="images/8.jpg" alt="웨딩사진 8">
+            <img src="images/9.jpg" alt="웨딩사진 9">
+            <img src="images/10.jpg" alt="웨딩사진 10">
+            <img src="images/11.jpg" alt="웨딩사진 11">
+            <img src="images/12.jpg" alt="웨딩사진 12">
+        </div>
+    </section>
+
+
+    <!-- 5. 예식 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">INFORMATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>일시</strong>
+                <span>
+                    2026년 12월 6일 일요일<br>
+                    오후 3시
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>장소</strong>
+                <span>
+                    라비에벨 웨딩홀<br>
+                    9층 단독홀
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. 위치 -->
+    <section class="fade-up">
+        <h2 class="section-title">LOCATION</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>웨딩홀</strong>
+                <span>라비에벨 웨딩홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>예식홀</strong>
+                <span>9층 단독홀</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주소</strong>
+                <span>
+                    경기도 부천시 원미구 길주로 105<br>
+                    세이브존 9층 라비에벨웨딩
+                </span>
+            </div>
+
+            <div class="info-row">
+                <strong>연락처</strong>
+                <span>032-325-2000</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+            <button class="btn fill" onclick="openMap()">
+                카카오맵 길찾기
+            </button>
+        </div>
+    </section>
+
+
+    <!-- 7. 주차 안내 -->
+    <section class="fade-up">
+        <h2 class="section-title">PARKING</h2>
+
+        <div class="info-list">
+
+            <div class="info-row">
+                <strong>주차안내</strong>
+                <span>세이브존 B2 ~ B4 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>추가주차</strong>
+                <span>하이파킹 주차장 이용 가능</span>
+            </div>
+
+            <div class="info-row">
+                <strong>주차지원</strong>
+                <span>2시간 무료주차</span>
+            </div>
+
+        </div>
+
+        <div class="map-button-wrap">
+
+            <button class="btn"
+                    onclick="openParkingMap('wedding')">
+                웨딩홀 주차장 지도 보기
+            </button>
+
+            <button class="btn"
+                    onclick="openParkingMap('public')">
+                추가 주차장 지도 보기
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- 8. 오시는 길 -->
+    <section class="fade-up">
+        <h2 class="section-title">TRANSPORTATION</h2>
+
+        <div class="transport-box">
+
+            <div class="transport-item">
+                <strong>지하철</strong>
+                <p>
+                    7호선 상동역 7번·8번 출구와 바로 연결<br>
+                    1호선 송내역 2번 출구에서 버스 약 15분
+                </p>
+            </div>
+
+            <div class="transport-item">
+                <strong>버스</strong>
+                <p>
+                    상동역7번출구·세이브존 하차<br>
+                    5-4, 16, 33, 50-1, 83
+                    <br><br>
+
+                    상동역8번출구·세이브존 하차<br>
+                    6-2, 23-2, 24, 37, 52, 59, 66, 70, 87
+                </p>
+            </div>
+
+            <div class="transport-item">
+                <strong>자가용</strong>
+                <p>
+                    네비게이션에<br>
+                    ‘라비에벨웨딩’ 또는<br>
+                    ‘세이브존 상동점’ 검색
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 9. 연락처 -->
+    <section class="fade-up">
+        <h2 class="section-title">CONTACT</h2>
+
+        <div class="contact-grid">
+
+            <button class="btn"
+                    onclick="location.href='tel:01012345678'">
+                신랑에게 연락
+            </button>
+
+            <button class="btn"
+                    onclick="location.href='tel:01087654321'">
+                신부에게 연락
+            </button>
+
+        </div>
+
+        <div class="family-contact">
+
+            <div class="family-title">
+                혼주 연락처
+            </div>
+
+            <div class="family-row">
+                <span>신랑 아버지</span>
+                <button class="btn"
+                        onclick="location.href='tel:01011112222'">
+                    연락
+                </button>
+            </div>
+
+            <div class="family-row">
+                <span>신랑 어머니</span>
+                <button class="btn"
+                        onclick="location.href='tel:01033334444'">
+                    연락
+                </button>
+            </div>
+
+            <div class="family-row">
+                <span>신부 아버지</span>
+                <button class="btn"
+                        onclick="location.href='tel:01055556666'">
+                    연락
+                </button>
+            </div>
+
+            <div class="family-row">
+                <span>신부 어머니</span>
+                <button class="btn"
+                        onclick="location.href='tel:01077778888'">
+                    연락
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+<!-- 11. 카카오톡 공유 -->
+    <section class="fade-up">
+
+        <button class="btn fill"
+                onclick="shareKakao()">
+            카카오톡으로 청첩장 공유하기
+        </button>
+
+    </section>
+
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
     <!-- 1. 메인 커버 -->
     <div class="hero">
         <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
@@ -995,19 +7331,729 @@ section{
         </div>
     </section>
 
+<!-- redeploy 2026-08-06 --><!-- deploy -->
+<title>영훈 · 재인 모바일 청첩장</title>
 
-    <!-- 11. 카카오톡 공유 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="영훈 ♥ 재인 결혼합니다">
+<meta property="og:description" content="2026년 12월 6일 일요일 오후 3시  라비에벨 웨딩홀">
+<meta property="og:image" content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826">
+<meta property="og:url" content="https://gns931.github.io/wedding.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+@font-face {
+    font-family:'Mapo';
+    src:url('./MapoGoldenPier.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#faf8f5;
+    color:#333;
+    font-family:'Mapo', serif;
+    line-height:1.9;
+    font-size:17px;
+}
+
+img{display:block;width:100%;}
+
+.wrap{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,0.04);
+}
+
+.progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:#8a6d59;
+    z-index:99999;
+}
+
+.flower{
+    position:fixed;
+    top:-20px;
+    color:#ead1d1;
+    font-size:16px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}
+    100%{transform:translateY(105vh) rotate(360deg);opacity:0;}
+}
+
+.hero{
+    padding:42px 24px 34px;
+    text-align:center;
+    background:#fff;
+}
+
+.hero-title{
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.hero-img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:22px;
+    animation:slowZoom 8s ease forwards;
+}
+
+.names{
+    margin-top:34px;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:3px;
+}
+
+.date-text{
+    margin-top:12px;
+    font-size:16px;
+    color:#555;
+}
+
+.hero-title,.names,.date-text{
+    opacity:0;
+    animation:fadeIn 1.4s ease forwards;
+}
+
+.hero-title{animation-delay:0.2s;}
+.names{animation-delay:0.8s;}
+.date-text{animation-delay:1.2s;}
+
+@keyframes slowZoom{
+    from{transform:scale(1.03);}
+    to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+section{
+    padding:64px 24px;
+    text-align:center;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#8a6d59;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:17px;
+    color:#666;
+    line-height:2;
+    word-break:keep-all;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.count-box{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:26px;
+}
+
+.count-box div{
+    border:1px solid #f0e7e0;
+    border-radius:16px;
+    padding:16px 4px;
+    background:#fffdfb;
+    transition:0.3s ease;
+}
+
+.count-box strong{
+    display:block;
+    font-size:24px;
+    font-weight:400;
+    color:#8a6d59;
+    line-height:1.2;
+}
+
+.count-box span{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    color:#777;
+}
+
+.calendar-box{
+    margin-top:34px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    padding:22px 18px;
+    background:#fffdfb;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.calendar-header{
+    text-align:center;
+    font-size:20px;
+    color:#8a6d59;
+    margin-bottom:18px;
+    letter-spacing:2px;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+}
+
+.calendar-week div{
+    font-size:13px;
+    color:#999;
+    padding-bottom:10px;
+}
+
+.calendar-week div:first-child{
+    color:#d85b5b;
+}
+
+.calendar-days div{
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    color:#555;
+}
+
+.calendar-days div:nth-child(7n+1){
+    color:#d85b5b;
+}
+
+.wedding-day{
+    position:relative;
+    color:#fff !important;
+    z-index:1;
+}
+
+.wedding-day:before{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#8a6d59;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.christmas{
+    color:#d85b5b !important;
+    font-weight:600;
+}
+
+.info-list{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:8px 18px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.info-row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row strong{
+    width:82px;
+    color:#8a6d59;
+    font-weight:400;
+}
+
+.info-row span{
+    flex:1;
+    color:#444;
+}
+
+.btn{
+    width:100%;
+    border:1px solid #8a6d59;
+    border-radius:999px;
+    background:#fff;
+    color:#8a6d59;
+    padding:14px;
+    margin-top:10px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+.btn.fill,
+.btn:hover{
+    background:#8a6d59;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+.section-spacing{
+    margin-top:26px;
+}
+
+.map-button-wrap{
+    margin-top:26px;
+}
+
+.map-button-wrap .btn{
+    margin-top:14px;
+}
+
+.info-list + .btn{
+    margin-top:24px;
+}
+
+.info-list + .btn + .btn{
+    margin-top:14px;
+}
+
+.transport-box{
+    margin-top:8px;
+}
+
+.account-box{
+    margin-top:22px;
+}
+
+.gallery{
+    margin-top:10px;
+}
+
+.timeline{
+    margin-top:8px;
+}
+
+.family-contact{
+    margin-top:28px;
+}
+
+.contact-grid{
+    margin-top:8px;
+}
+
+.section-title{
+    margin-bottom:36px;
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.family-contact{
+    margin-top:24px;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.family-title{
+    color:#8a6d59;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.family-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid #f1e9e2;
+}
+
+.family-row:last-child{
+    border-bottom:none;
+}
+
+.family-row button{
+    width:auto;
+    padding:8px 14px;
+    margin:0;
+    font-size:14px;
+}
+
+.timeline{
+    max-width:360px;
+    margin:0 auto;
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:26px 24px 26px 30px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 24px 28px;
+    border-left:1px solid #e5d8cf;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#8a6d59;
+}
+
+.timeline-time{
+    color:#8a6d59;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.timeline-title{
+    font-size:17px;
+    color:#333;
+}
+
+.timeline-desc{
+    font-size:14px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    opacity:0.92;
+}
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.image-modal img{
+    width:100%;
+    max-width:760px;
+    max-height:86vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:32px;
+    line-height:42px;
+    cursor:pointer;
+}
+
+.modal-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:58px;
+    border:none;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:46px;
+    cursor:pointer;
+}
+
+.modal-arrow.left{
+    left:12px;
+}
+
+.modal-arrow.right{
+    right:12px;
+}
+
+.modal-count{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.transport-box{
+    text-align:left;
+    max-width:360px;
+    margin:0 auto;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.transport-item{
+    margin-bottom:22px;
+}
+
+.transport-item:last-child{
+    margin-bottom:0;
+}
+
+.transport-item strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+.account-box{
+    text-align:left;
+    border:1px solid #f0e7e0;
+    border-radius:18px;
+    background:#fffdfb;
+    padding:22px;
+    margin-top:14px;
+    box-shadow:0 8px 24px rgba(138,109,89,0.05);
+}
+
+.account-box strong{
+    display:block;
+    color:#8a6d59;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.account-box p{
+    color:#444;
+}
+
+.ending-text{
+    font-size:17px;
+    color:#555;
+    line-height:2.2;
+    word-break:keep-all;
+}
+
+.footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid #f0e7e0;
+    background:#fff;
+}
+
+@media screen and (max-width:480px){
+    body{font-size:16px;}
+    .wrap{max-width:none;box-shadow:none;}
+    .hero{padding:36px 18px 28px;}
+    .hero-img{height:70vh;border-radius:18px;}
+    .names{font-size:28px;}
+    section{padding:56px 18px;}
+    .section-title{font-size:21px;}
+    .desc{font-size:16px;}
+    .count-box strong{font-size:22px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .calendar-box{padding:20px 12px;}
+    .calendar-days div{height:34px;line-height:34px;font-size:14px;}
+    .wedding-day:before{width:32px;height:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrap">
+
+    <!-- 1. 메인 커버 -->
+    <div class="hero">
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
+
+        <div class="names">영훈 · 재인</div>
+        <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
+        <div class="date-text">라비에벨 웨딩홀</div>
+    </div>
+
+
+    <!-- 2. 초대의 글 -->
     <section class="fade-up">
+        <h2 class="section-title">INVITATION</h2>
 
-        <button class="btn fill"
-                onclick="shareKakao()">
-            카카오톡으로 청첩장 공유하기
-        </button>
-
+        <p class="desc">
+            서로의 하루를 함께 걸어가기로 했습니다.<br>
+            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br><br>
+            부디 오셔서 따뜻한 축복으로 함께해주세요.
+        </p>
     </section>
 
 
-    <!-- 12. 엔딩 -->
+    <!-- 3. D-DAY + 달력 -->
+    <section class="fade-up">
+        <h2 class="section-title">COUNTDOWN</h2>
+
+        <div class="count-box">
+            <div><strong id="countDay">0</strong><span>일</span></div>
+            <div><strong id="countHour">0</strong><span>시간</span></div>
+            <div><strong id="countMin">0</strong><span>분</span></div>
+            <div><strong id="countSec">0</strong><span>초</span></div>
+        </div>
+
+        <div class="calendar-box">
+
+            <div class="calendar-header">
+                <span>2026. 12</span>
+            </div>
+
+            <div class="calendar-grid calendar-week">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="calendar-grid calendar-days">
+
+                <div></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+
+                <div class="wedding-day">6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div class="christmas">25</div>
+                <div>26</div>
+
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- 12. 엔딩 -->
     <section class="fade-up">
 
         <p class="ending-text">
@@ -1020,13 +8066,13 @@ section{
 
     </section>
 
-
-    <div class="footer">
+<div class="footer">
         Thank you for celebrating with us
     </div>
 
 </div>
 
+</div>
 
 <div class="image-modal" id="imageModal">
     <button class="modal-close" onclick="closeImage()">×</button>
