@@ -13,80 +13,7 @@
 <meta property="og:url" content="https://gns931.github.io/wedding.io/">
 <meta name="twitter:card" content="summary_large_image">
 
-<script src="https://developers.kakao.com/sdk/js/kakao.js">
-
-/* ===== Premium v3 interactions ===== */
-
-window.addEventListener("load", function(){
-
-    const loadingScreen = document.getElementById("loadingScreen");
-
-    setTimeout(function(){
-
-        loadingScreen.style.opacity = "0";
-
-        setTimeout(function(){
-            loadingScreen.style.display = "none";
-        },800);
-
-    },1500);
-
-});
-
-var topButton = document.getElementById("topButton");
-
-window.addEventListener("scroll", function(){
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if(topButton){
-        topButton.classList.toggle("show", scrollTop > 500);
-    }
-
-    var heroImage = document.getElementById("heroParallax");
-
-    if(heroImage && scrollTop < window.innerHeight * 1.2){
-        var move = Math.min(scrollTop * 0.11, 48);
-        heroImage.style.transform =
-            "translate3d(0," + move + "px,0) scale(1.08)";
-    }
-}, {passive:true});
-
-if(topButton){
-    topButton.addEventListener("click", function(){
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-    });
-}
-
-function createDdayHeart(){
-    var layer = document.getElementById("ddayHeartLayer");
-
-    if(!layer){
-        return;
-    }
-
-    var heart = document.createElement("span");
-    heart.className = "dday-heart";
-    heart.innerHTML = "♡";
-    heart.style.left = (8 + Math.random() * 84) + "%";
-    heart.style.fontSize = (11 + Math.random() * 8) + "px";
-
-    layer.appendChild(heart);
-
-    setTimeout(function(){
-        heart.remove();
-    }, 2800);
-}
-
-setInterval(function(){
-    if(!document.hidden && Math.random() > 0.3){
-        createDdayHeart();
-    }
-}, 2300);
-
-</script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -690,345 +617,10 @@ section{
     .calendar-days div{height:34px;line-height:34px;font-size:14px;}
     .wedding-day:before{width:32px;height:32px;}
 }
-
-/* ===== Premium v3 additions ===== */
-
-body.modal-open{
-    overflow:hidden;
-}
-
-/* Loading screen */
-.loading-screen{
-    position:fixed;
-    inset:0;
-    z-index:1000000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#fffdfb;
-    transition:opacity .8s ease, visibility .8s ease;
-}
-
-.loading-screen.hide{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-}
-
-.loading-inner{
-    text-align:center;
-    color:#8a6d59;
-    animation:loadingFloat 1.8s ease-in-out infinite;
-}
-
-.loading-heart{
-    font-size:24px;
-    margin-bottom:12px;
-}
-
-.loading-names{
-    font-size:25px;
-    line-height:1.7;
-    letter-spacing:3px;
-}
-
-.loading-date{
-    margin-top:12px;
-    font-size:14px;
-    letter-spacing:2px;
-    color:#9a8577;
-}
-
-@keyframes loadingFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-5px);}
-}
-
-/* Hero text stagger */
-.hero-title{
-    display:flex;
-    flex-direction:column;
-    gap:2px;
-}
-
-.hero-title span{
-    display:block;
-    opacity:0;
-    transform:translateY(16px);
-    animation:heroLineIn .9s ease forwards;
-}
-
-.hero-title span:nth-child(1){animation-delay:.15s;}
-.hero-title span:nth-child(2){animation-delay:.45s;}
-.hero-title span:nth-child(3){animation-delay:.75s;}
-
-@keyframes heroLineIn{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Main image parallax */
-.hero-img-wrap{
-    position:relative;
-    overflow:hidden;
-    border-radius:22px;
-}
-
-.hero-img{
-    will-change:transform;
-    transform:scale(1.06);
-    animation:none;
-}
-
-/* Countdown heart */
-.countdown-wrap{
-    position:relative;
-}
-
-.dday-heart-layer{
-    position:absolute;
-    inset:-8px 0 auto 0;
-    height:110px;
-    pointer-events:none;
-    overflow:visible;
-}
-
-.dday-heart{
-    position:absolute;
-    bottom:0;
-    color:#d9aaa6;
-    font-size:14px;
-    opacity:0;
-    animation:heartFloat 2.6s ease-out forwards;
-}
-
-@keyframes heartFloat{
-    0%{
-        opacity:0;
-        transform:translateY(8px) scale(.7);
-    }
-    20%{opacity:.75;}
-    100%{
-        opacity:0;
-        transform:translateY(-70px) scale(1.15);
-    }
-}
-
-/* Gallery stagger animation */
-.gallery img{
-    opacity:0;
-    transform:translateY(16px) scale(.96);
-}
-
-.gallery.gallery-show img{
-    animation:galleryReveal .7s ease forwards;
-}
-
-.gallery.gallery-show img:nth-child(1){animation-delay:.03s;}
-.gallery.gallery-show img:nth-child(2){animation-delay:.09s;}
-.gallery.gallery-show img:nth-child(3){animation-delay:.15s;}
-.gallery.gallery-show img:nth-child(4){animation-delay:.21s;}
-.gallery.gallery-show img:nth-child(5){animation-delay:.27s;}
-.gallery.gallery-show img:nth-child(6){animation-delay:.33s;}
-.gallery.gallery-show img:nth-child(7){animation-delay:.39s;}
-.gallery.gallery-show img:nth-child(8){animation-delay:.45s;}
-.gallery.gallery-show img:nth-child(9){animation-delay:.51s;}
-.gallery.gallery-show img:nth-child(10){animation-delay:.57s;}
-.gallery.gallery-show img:nth-child(11){animation-delay:.63s;}
-.gallery.gallery-show img:nth-child(12){animation-delay:.69s;}
-
-@keyframes galleryReveal{
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-/* Modal indicators */
-.modal-indicators{
-    position:absolute;
-    bottom:48px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:6px;
-    width:min(82vw, 420px);
-}
-
-.modal-dot{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:rgba(255,255,255,.35);
-    transition:all .25s ease;
-}
-
-.modal-dot.active{
-    width:16px;
-    border-radius:999px;
-    background:#fff;
-}
-
-.modal-count{
-    bottom:20px;
-}
-
-/* Map preview */
-.map-preview{
-    margin-top:26px;
-    border:1px solid #f0e7e0;
-    border-radius:18px;
-    overflow:hidden;
-    background:#fffdfb;
-    box-shadow:0 8px 24px rgba(138,109,89,.06);
-}
-
-.map-preview iframe{
-    display:block;
-    width:100%;
-    height:250px;
-    border:0;
-}
-
-.map-preview-caption{
-    padding:12px 14px;
-    font-size:14px;
-    color:#777;
-    background:#fffdfb;
-}
-
-/* Scroll to top */
-.top-button{
-    position:fixed;
-    right:18px;
-    bottom:20px;
-    width:44px;
-    height:44px;
-    border:none;
-    border-radius:50%;
-    background:rgba(138,109,89,.9);
-    color:#fff;
-    font-family:inherit;
-    font-size:20px;
-    line-height:44px;
-    text-align:center;
-    cursor:pointer;
-    z-index:99990;
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(12px);
-    transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
-    box-shadow:0 8px 22px rgba(0,0,0,.14);
-}
-
-.top-button.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
-
-/* Premium ending */
-.ending-section{
-    padding-top:78px;
-    padding-bottom:78px;
-}
-
-.ending-symbol{
-    color:#d6aaa5;
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-.ending-date{
-    margin-top:30px;
-    color:#8a6d59;
-    font-size:15px;
-    letter-spacing:2px;
-}
-
-.ending-names{
-    margin-top:12px;
-    color:#444;
-    font-size:22px;
-    line-height:1.6;
-    letter-spacing:2px;
-}
-
-/* Footer refresh */
-.footer{
-    padding:42px 20px 46px;
-}
-
-.footer-date{
-    color:#8a6d59;
-    letter-spacing:2px;
-    margin-bottom:8px;
-}
-
-.footer-names{
-    font-size:18px;
-    line-height:1.6;
-    color:#666;
-    margin-bottom:12px;
-}
-
-.footer-thanks{
-    font-size:13px;
-    color:#aaa;
-    letter-spacing:.5px;
-}
-
-@media screen and (max-width:480px){
-    .hero-img-wrap{
-        border-radius:18px;
-    }
-
-    .map-preview iframe{
-        height:220px;
-    }
-
-    .top-button{
-        right:14px;
-        bottom:16px;
-        width:42px;
-        height:42px;
-        line-height:42px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce){
-    *,
-    *::before,
-    *::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        scroll-behavior:auto !important;
-        transition-duration:.01ms !important;
-    }
-}
-
 </style>
 </head>
 
 <body>
-
-<div class="loading-screen" id="loadingScreen">
-    <div class="loading-inner">
-        <div class="loading-heart">♡</div>
-        <div class="loading-names">
-            YOUNGHOON<br>
-            ♡<br>
-            JAEIN
-        </div>
-        <div class="loading-date">2026.12.06</div>
-    </div>
-</div>
-
 
 <div class="progress-bar" id="progressBar"></div>
 
@@ -1036,18 +628,11 @@ body.modal-open{
 
     <!-- 1. 메인 커버 -->
     <div class="hero">
-        <h1 class="hero-title">
-            <span>WE ARE</span>
-            <span>GETTING</span>
-            <span>MARRIED</span>
-        </h1>
+        <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
 
-        <div class="hero-img-wrap">
-            <img class="hero-img"
-                 id="heroParallax"
-                 src="images/13.jpg"
-                 alt="영훈 재인 웨딩사진">
-        </div>
+        <img class="hero-img"
+             src="images/13.jpg"
+             alt="영훈 재인 웨딩사진">
 
         <div class="names">영훈 · 재인</div>
         <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
@@ -1071,15 +656,11 @@ body.modal-open{
     <section class="fade-up">
         <h2 class="section-title">COUNTDOWN</h2>
 
-        <div class="countdown-wrap">
-            <div class="dday-heart-layer" id="ddayHeartLayer"></div>
-
-            <div class="count-box">
+        <div class="count-box">
             <div><strong id="countDay">0</strong><span>일</span></div>
             <div><strong id="countHour">0</strong><span>시간</span></div>
             <div><strong id="countMin">0</strong><span>분</span></div>
             <div><strong id="countSec">0</strong><span>초</span></div>
-            </div>
         </div>
 
         <div class="calendar-box">
@@ -1229,19 +810,6 @@ body.modal-open{
                 <span>032-325-2000</span>
             </div>
 
-        </div>
-
-
-        <div class="map-preview">
-            <iframe
-                title="라비에벨 웨딩홀 위치 미리보기"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=%EB%B6%80%EC%B2%9C%20%EB%9D%BC%EB%B9%84%EC%97%90%EB%B2%A8%EC%9B%A8%EB%94%A9&output=embed">
-            </iframe>
-            <div class="map-preview-caption">
-                지도를 누르거나 아래 버튼에서 카카오맵 길찾기를 이용해주세요.
-            </div>
         </div>
 
         <div class="map-button-wrap">
@@ -1440,35 +1008,21 @@ body.modal-open{
 
 
     <!-- 12. 엔딩 -->
-    <section class="fade-up ending-section">
-        <div class="ending-symbol">♡</div>
+    <section class="fade-up">
 
         <p class="ending-text">
-            오늘의 축복이<br>
-            평생의 행복이 되겠습니다.<br><br>
-            함께해주시는 모든 마음을<br>
-            오래도록 소중히 간직하겠습니다.
+            바쁘신 걸음에도 함께해주시는 모든 마음<br>
+            오래도록 소중히 간직하겠습니다.<br><br>
+
+            저희 두 사람의 새로운 시작을<br>
+            따뜻한 마음으로 축복해주세요.
         </p>
 
-        <div class="ending-date">2026.12.06</div>
-
-        <div class="ending-names">
-            YOUNGHOON<br>
-            ♡<br>
-            JAEIN
-        </div>
     </section>
 
+
     <div class="footer">
-        <div class="footer-date">2026.12.06</div>
-        <div class="footer-names">
-            Younghoon<br>
-            ♡<br>
-            Jaein
-        </div>
-        <div class="footer-thanks">
-            Thank you for celebrating with us
-        </div>
+        Thank you for celebrating with us
     </div>
 
 </div>
@@ -1482,11 +1036,8 @@ body.modal-open{
 
     <button class="modal-arrow right" onclick="nextImage(event)">›</button>
 
-    <div class="modal-indicators" id="modalIndicators"></div>
     <div class="modal-count" id="modalCount"></div>
 </div>
-
-<button class="top-button" id="topButton" type="button" aria-label="맨 위로 이동">↑</button>
 
 <script>
 /*
@@ -1527,8 +1078,6 @@ function copyText(text){
 
 var galleryImages = [];
 var currentImageIndex = 0;
-var touchStartX = 0;
-var touchEndX = 0;
 
 function initGallery(){
     galleryImages = document.querySelectorAll(".gallery img");
@@ -1539,57 +1088,12 @@ function initGallery(){
             openImage(parseInt(this.getAttribute("data-index"), 10));
         };
     }
-
-    createModalIndicators();
-
-    var gallery = document.querySelector(".gallery");
-
-    if(gallery){
-        var galleryObserver = new IntersectionObserver(function(entries){
-            entries.forEach(function(entry){
-                if(entry.isIntersecting){
-                    gallery.classList.add("gallery-show");
-                    galleryObserver.unobserve(gallery);
-                }
-            });
-        }, {
-            threshold:0.18
-        });
-
-        galleryObserver.observe(gallery);
-    }
-}
-
-function createModalIndicators(){
-    var indicatorBox = document.getElementById("modalIndicators");
-
-    if(!indicatorBox){
-        return;
-    }
-
-    indicatorBox.innerHTML = "";
-
-    for(var i = 0; i < galleryImages.length; i++){
-        var dot = document.createElement("span");
-        dot.className = "modal-dot";
-        dot.setAttribute("data-index", i);
-
-        dot.addEventListener("click", function(e){
-            e.stopPropagation();
-            currentImageIndex = parseInt(this.getAttribute("data-index"), 10);
-            updateModalImage();
-        });
-
-        indicatorBox.appendChild(dot);
-    }
 }
 
 function openImage(index){
     currentImageIndex = index;
 
     document.getElementById("imageModal").style.display = "flex";
-    document.body.classList.add("modal-open");
-
     updateModalImage();
 }
 
@@ -1597,23 +1101,14 @@ function updateModalImage(){
     document.getElementById("modalImg").src = galleryImages[currentImageIndex].src;
     document.getElementById("modalCount").innerText =
         (currentImageIndex + 1) + " / " + galleryImages.length;
-
-    var dots = document.querySelectorAll(".modal-dot");
-
-    for(var i = 0; i < dots.length; i++){
-        dots[i].classList.toggle("active", i === currentImageIndex);
-    }
 }
 
 function closeImage(){
     document.getElementById("imageModal").style.display = "none";
-    document.body.classList.remove("modal-open");
 }
 
 function prevImage(event){
-    if(event){
-        event.stopPropagation();
-    }
+    event.stopPropagation();
 
     currentImageIndex--;
 
@@ -1625,9 +1120,7 @@ function prevImage(event){
 }
 
 function nextImage(event){
-    if(event){
-        event.stopPropagation();
-    }
+    event.stopPropagation();
 
     currentImageIndex++;
 
@@ -1644,37 +1137,25 @@ document.getElementById("imageModal").addEventListener("click", function(e){
     }
 });
 
-document.getElementById("imageModal").addEventListener("touchstart", function(e){
-    touchStartX = e.changedTouches[0].screenX;
-}, {passive:true});
-
-document.getElementById("imageModal").addEventListener("touchend", function(e){
-    touchEndX = e.changedTouches[0].screenX;
-
-    var distance = touchEndX - touchStartX;
-
-    if(Math.abs(distance) < 50){
-        return;
-    }
-
-    if(distance < 0){
-        nextImage();
-    }else{
-        prevImage();
-    }
-}, {passive:true});
-
 document.addEventListener("keydown", function(e){
     if(document.getElementById("imageModal").style.display !== "flex"){
         return;
     }
 
     if(e.key === "ArrowLeft"){
-        prevImage();
+        currentImageIndex--;
+        if(currentImageIndex < 0){
+            currentImageIndex = galleryImages.length - 1;
+        }
+        updateModalImage();
     }
 
     if(e.key === "ArrowRight"){
-        nextImage();
+        currentImageIndex++;
+        if(currentImageIndex >= galleryImages.length){
+            currentImageIndex = 0;
+        }
+        updateModalImage();
     }
 
     if(e.key === "Escape"){
