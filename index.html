@@ -1027,6 +1027,18 @@ section{
 
 </div>
 
+
+<div class="image-modal" id="imageModal">
+    <button class="modal-close" onclick="closeImage()">×</button>
+    <button class="modal-arrow left" onclick="prevImage(event)">‹</button>
+
+    <img id="modalImg" alt="확대된 웨딩사진">
+
+    <button class="modal-arrow right" onclick="nextImage(event)">›</button>
+
+    <div class="modal-count" id="modalCount"></div>
+</div>
+
 <script>
 /*
     카카오 개발자센터에서 JavaScript 키 발급 후 아래에 넣으세요.
