@@ -620,8 +620,6 @@ section{
 <body>
 <div class="progress-bar" id="progressBar"></div>
 <div class="wrap">
-
-
 <div class="hero">
 <h1 class="hero-title">WE ARE GETTING MARRIED</h1>
 <img alt="영훈 재인 웨딩사진" class="hero-img" src="images/13.jpg"/>
@@ -629,18 +627,10 @@ section{
 <div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
 <div class="date-text">라비에벨 웨딩홀</div>
 </div>
-
-
 <section class="fade-up">
 <h2 class="section-title">INVITATION</h2>
-<p class="desc">
-            서로의 하루를 함께 걸어가기로 했습니다.<br/>
-            소중한 분들과 이 기쁜 순간을 함께하고 싶습니다.<br/><br/>
-            부디 오셔서 따뜻한 축복으로 함께해주세요.
-        </p>
+<p class="desc">작은 생명을 들여다보니 만나게 된 두사람이<br/>다정한 시간을 쌓아 새로운 앞날을 약속하려 합니다.<br/>함께 자리하여 둘의 약속을 축복해주시면 감사하겠습니다.</p>
 </section>
-
-
 <section class="fade-up">
 <h2 class="section-title">INFORMATION</h2>
 <div class="info-list">
@@ -658,17 +648,8 @@ section{
                     9층 단독홀
                 </span>
 </div>
-<div class="info-row">
-<strong>주소</strong>
-<span>
-                    경기도 부천시 원미구 길주로 105<br/>
-                    세이브존 9층
-                </span>
-</div>
 </div>
 </section>
-
-
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2>
 <div class="gallery">
@@ -686,8 +667,6 @@ section{
 <img alt="웨딩사진 12" src="images/12.jpg"/>
 </div>
 </section>
-
-
 <section class="fade-up">
 <h2 class="section-title">LOCATION</h2>
 <div class="info-list">
@@ -717,8 +696,6 @@ section{
             </button>
 </div>
 </section>
-
-
 <section class="fade-up">
 <h2 class="section-title">PARKING</h2>
 <div class="info-list">
@@ -744,8 +721,6 @@ section{
             </button>
 </div>
 </section>
-
-
 <section class="fade-up">
 <h2 class="section-title">TRANSPORTATION</h2>
 <div class="transport-box">
@@ -777,8 +752,11 @@ section{
 </div>
 </div>
 </section>
-
-
+<section class="fade-up">
+<button class="btn fill" onclick="shareKakao()">
+            카카오톡으로 청첩장 공유하기
+        </button>
+</section>
 <section class="fade-up">
 <h2 class="section-title">CONTACT</h2>
 <div class="contact-grid">
@@ -789,68 +767,40 @@ section{
                 신부에게 연락
             </button>
 </div>
-<div class="family-contact">
-<div class="family-title">
-                혼주 연락처
-            </div>
-<div class="family-row">
-<span>신랑 아버지</span>
-<button class="btn" onclick="location.href='tel:01011112222'">
-                    연락
-                </button>
-</div>
-<div class="family-row">
-<span>신랑 어머니</span>
-<button class="btn" onclick="location.href='tel:01033334444'">
-                    연락
-                </button>
-</div>
-<div class="family-row">
-<span>신부 아버지</span>
-<button class="btn" onclick="location.href='tel:01055556666'">
-                    연락
-                </button>
-</div>
-<div class="family-row">
-<span>신부 어머니</span>
-<button class="btn" onclick="location.href='tel:01077778888'">
-                    연락
-                </button>
-</div>
-</div>
 </section>
-
-
-<section class="fade-up">
-<button class="btn fill" onclick="shareKakao()">
-            카카오톡으로 청첩장 공유하기
-        </button>
-</section>
-
 <section class="fade-up">
 <h2 class="section-title">ACCOUNT</h2>
 <div class="account-box">
 <strong>신랑측 계좌</strong>
-<p>
-                국민은행 123456-12-123456<br/>
-                정영훈
-            </p>
-<button class="btn" onclick="copyText('국민은행 123456-12-123456 정영훈')">
-                계좌번호 복사
-            </button>
+<p>국민은행 123456-12-123456<br/>정영훈</p>
+<button class="btn" onclick="copyText('국민은행 123456-12-123456 정영훈')">계좌번호 복사</button>
+</div>
+<div class="account-box">
+<strong>신랑 아버지 계좌</strong>
+<p>은행명 계좌번호 입력<br/>성함 입력</p>
+<button class="btn" onclick="copyText('은행명 계좌번호 입력 성함 입력')">계좌번호 복사</button>
+</div>
+<div class="account-box">
+<strong>신랑 어머니 계좌</strong>
+<p>은행명 계좌번호 입력<br/>성함 입력</p>
+<button class="btn" onclick="copyText('은행명 계좌번호 입력 성함 입력')">계좌번호 복사</button>
 </div>
 <div class="account-box">
 <strong>신부측 계좌</strong>
-<p>
-                신한은행 110-123-456789<br/>
-                심재인
-            </p>
-<button class="btn" onclick="copyText('신한은행 110-123-456789 심재인')">
-                계좌번호 복사
-            </button>
+<p>신한은행 110-123-456789<br/>심재인</p>
+<button class="btn" onclick="copyText('신한은행 110-123-456789 심재인')">계좌번호 복사</button>
+</div>
+<div class="account-box">
+<strong>신부 아버지 계좌</strong>
+<p>은행명 계좌번호 입력<br/>성함 입력</p>
+<button class="btn" onclick="copyText('은행명 계좌번호 입력 성함 입력')">계좌번호 복사</button>
+</div>
+<div class="account-box">
+<strong>신부 어머니 계좌</strong>
+<p>은행명 계좌번호 입력<br/>성함 입력</p>
+<button class="btn" onclick="copyText('은행명 계좌번호 입력 성함 입력')">계좌번호 복사</button>
 </div>
 </section>
-
 <section class="fade-up">
 <h2 class="section-title">COUNTDOWN</h2>
 <div class="count-box">
@@ -911,7 +861,6 @@ section{
 </div>
 </div>
 </section>
-
 <section class="fade-up">
 <p class="ending-text">
             바쁘신 걸음에도 함께해주시는 모든 마음<br/>
@@ -921,7 +870,6 @@ section{
             따뜻한 마음으로 축복해주세요.
         </p>
 </section>
-
 <div class="footer">
         Thank you for celebrating with us
     </div>
