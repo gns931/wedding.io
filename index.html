@@ -1459,6 +1459,31 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* ===== Revert mobile side margin + smaller ending text ===== */
+@media screen and (max-width:480px){
+    body{
+        padding:0 !important;
+    }
+
+    .wrap{
+        max-width:none !important;
+        width:100% !important;
+        box-shadow:none !important;
+    }
+}
+
+.ending-text{
+    font-size:14px !important;
+    line-height:1.85 !important;
+}
+
+@media screen and (max-width:480px){
+    .ending-text{
+        font-size:14px !important;
+    }
+}
+
 </style>
 </head>
 <body>
