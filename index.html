@@ -1428,6 +1428,37 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* ===== CONTACT label cleanup + mobile beige side margin ===== */
+
+/* CONTACT는 버튼 문구만으로 구분 */
+.contact-grid .side-label{
+    display:none !important;
+}
+
+.contact-grid .btn{
+    margin-top:10px !important;
+}
+
+.contact-grid .btn:first-child{
+    margin-top:0 !important;
+}
+
+/* 모바일에서도 양옆 베이지 배경이 보이도록 */
+@media screen and (max-width:480px){
+    body{
+        background:#faf8f5 !important;
+        padding:0 12px;
+    }
+
+    .wrap{
+        width:100% !important;
+        max-width:456px !important;
+        margin:0 auto !important;
+        box-shadow:0 10px 30px rgba(80,60,45,.04) !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1539,9 +1570,9 @@ section > .btn.fill[onclick*="shareKakao"]{
 </section>
 <section class="fade-up">
 <h2 class="section-title">CONTACT</h2><div class="section-subtitle">연락하기</div>
-<div class="contact-grid"><div class="side-label">신랑</div><button class="btn" onclick="location.href='tel:01073763575'">
+<div class="contact-grid"><button class="btn" onclick="location.href='tel:01073763575'">
                 신랑에게 연락
-            </button><div class="side-label">신부</div><button class="btn" onclick="location.href='tel:01038691805'">
+            </button><button class="btn" onclick="location.href='tel:01038691805'">
                 신부에게 연락
             </button></div>
 </section>
