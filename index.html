@@ -12,7 +12,80 @@
 <meta content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826" property="og:image"/>
 <meta content="https://gns931.github.io/wedding.io/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js">
+var touchStartX = 0;
+var touchStartY = 0;
+var touchMoveX = 0;
+var touchMoveY = 0;
+var isSwiping = false;
+
+var modal = document.getElementById("imageModal");
+var modalImg = document.getElementById("modalImg");
+
+modal.addEventListener("touchstart", function(e){
+    if(e.touches.length !== 1) return;
+
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchMoveX = touchStartX;
+    touchMoveY = touchStartY;
+    isSwiping = true;
+
+    modalImg.classList.remove("swipe-animate");
+}, {passive:true});
+
+modal.addEventListener("touchmove", function(e){
+    if(!isSwiping || e.touches.length !== 1) return;
+
+    touchMoveX = e.touches[0].clientX;
+    touchMoveY = e.touches[0].clientY;
+
+    var diffX = touchMoveX - touchStartX;
+    var diffY = touchMoveY - touchStartY;
+
+    /* 가로 움직임이 세로 움직임보다 클 때만 사진을 따라 움직이게 */
+    if(Math.abs(diffX) > Math.abs(diffY)){
+        modalImg.style.transform = "translateX(" + (diffX * 0.35) + "px)";
+        modalImg.style.opacity = Math.max(0.65, 1 - Math.abs(diffX) / 500);
+    }
+}, {passive:true});
+
+modal.addEventListener("touchend", function(){
+    if(!isSwiping) return;
+    isSwiping = false;
+
+    var diffX = touchMoveX - touchStartX;
+    var diffY = touchMoveY - touchStartY;
+
+    modalImg.classList.add("swipe-animate");
+
+    if(Math.abs(diffX) > 55 && Math.abs(diffX) > Math.abs(diffY)){
+        if(diffX < 0){
+            currentImageIndex++;
+            if(currentImageIndex >= galleryImages.length){
+                currentImageIndex = 0;
+            }
+        }else{
+            currentImageIndex--;
+            if(currentImageIndex < 0){
+                currentImageIndex = galleryImages.length - 1;
+            }
+        }
+
+        modalImg.style.opacity = "0";
+
+        setTimeout(function(){
+            updateModalImage();
+            modalImg.style.transform = "translateX(0)";
+            modalImg.style.opacity = "1";
+        }, 120);
+    }else{
+        modalImg.style.transform = "translateX(0)";
+        modalImg.style.opacity = "1";
+    }
+}, {passive:true});
+
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -1183,6 +1256,95 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* ===== Gallery modal swipe ===== */
+.modal-arrow,
+.modal-count{
+    display:none !important;
+}
+
+.image-modal{
+    overflow:hidden;
+    touch-action:pan-y;
+}
+
+.image-modal img{
+    user-select:none;
+    -webkit-user-drag:none;
+    transition:transform .18s ease, opacity .18s ease;
+}
+
+.image-modal img.swipe-animate{
+    transition:transform .18s ease, opacity .18s ease;
+}
+
+
+/* ===== ACCOUNT accordion trigger -> card style ===== */
+.account-accordion{
+    margin-top:12px !important;
+    border:1px solid #e8ddd5 !important;
+    border-radius:14px !important;
+    background:#fffdfb !important;
+    box-shadow:0 5px 16px rgba(90,65,48,.045) !important;
+    overflow:hidden;
+}
+
+.account-accordion + .account-accordion{
+    margin-top:12px !important;
+}
+
+.account-accordion summary{
+    min-height:50px;
+    padding:13px 18px !important;
+    background:#fffdfb;
+    color:#765e4f !important;
+    font-size:15px !important;
+    letter-spacing:.2px;
+}
+
+.account-accordion summary:hover{
+    background:#fffaf6;
+}
+
+.account-accordion[open] summary{
+    border-bottom:1px solid #eee4dc;
+}
+
+.account-accordion-body{
+    padding:8px 12px 12px !important;
+    background:#fff;
+}
+
+.account-accordion .accordion-icon{
+    width:26px;
+    height:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 26px;
+    margin-left:12px;
+    border-radius:50%;
+    background:#f5eee9;
+    color:#8a6d59;
+    font-size:18px;
+    line-height:1;
+}
+
+.account-accordion[open] .accordion-icon{
+    transform:rotate(45deg);
+}
+
+@media screen and (max-width:480px){
+    .account-accordion{
+        border-radius:13px !important;
+    }
+
+    .account-accordion summary{
+        min-height:48px;
+        padding:12px 16px !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1407,10 +1569,7 @@ section > .btn.fill[onclick*="shareKakao"]{
 </div>
 <div class="image-modal" id="imageModal">
 <button class="modal-close" onclick="closeImage()">×</button>
-<button class="modal-arrow left" onclick="prevImage(event)">‹</button>
 <img alt="확대된 웨딩사진" id="modalImg"/>
-<button class="modal-arrow right" onclick="nextImage(event)">›</button>
-<div class="modal-count" id="modalCount"></div>
 </div>
 <script>
 /*
@@ -1472,8 +1631,6 @@ function openImage(index){
 
 function updateModalImage(){
     document.getElementById("modalImg").src = galleryImages[currentImageIndex].src;
-    document.getElementById("modalCount").innerText =
-        (currentImageIndex + 1) + " / " + galleryImages.length;
 }
 
 function closeImage(){
