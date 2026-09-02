@@ -686,6 +686,209 @@ section{
     }
 }
 
+
+/* ===== Wedding minimal button redesign ===== */
+.btn{
+    position:relative;
+    width:100%;
+    min-height:50px;
+    margin-top:12px;
+    padding:13px 44px 13px 18px;
+    border:1px solid #e8ddd5;
+    border-radius:14px;
+    background:#fffdfb;
+    color:#765e4f;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:.2px;
+    cursor:pointer;
+    box-shadow:0 5px 16px rgba(90,65,48,.045);
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.btn::after{
+    content:"→";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-52%);
+    font-size:17px;
+    color:#aa9180;
+    transition:transform .18s ease;
+}
+
+.btn:hover{
+    background:#fffaf6;
+    color:#765e4f;
+    border-color:#d8c7ba;
+    box-shadow:0 8px 22px rgba(90,65,48,.08);
+    transform:translateY(-1px);
+}
+
+.btn:hover::after{
+    transform:translate(3px,-52%);
+}
+
+.btn:active{
+    transform:scale(.985);
+}
+
+/* 메인 액션 버튼 */
+.btn.fill{
+    border-color:#8a6d59;
+    background:#8a6d59;
+    color:#fff;
+    box-shadow:0 7px 20px rgba(138,109,89,.16);
+}
+
+.btn.fill::after{
+    color:rgba(255,255,255,.8);
+}
+
+.btn.fill:hover{
+    background:#7d624f;
+    color:#fff;
+    border-color:#7d624f;
+}
+
+/* 연락처 버튼 */
+.contact-grid .btn{
+    text-align:left;
+    padding-left:20px;
+}
+
+/* ACCOUNT 카드 */
+.account-box{
+    position:relative;
+    padding:20px 82px 20px 20px !important;
+    min-height:92px;
+}
+
+.account-box strong{
+    margin-bottom:5px !important;
+    font-size:14px;
+    color:#9a806e !important;
+}
+
+.account-box p{
+    font-size:15px;
+    line-height:1.7;
+    word-break:keep-all;
+}
+
+/* 계좌번호 복사는 작고 단정한 버튼으로 */
+.account-box .btn{
+    position:absolute;
+    top:50%;
+    right:16px;
+    transform:translateY(-50%);
+    width:auto !important;
+    min-width:52px;
+    min-height:34px;
+    margin:0 !important;
+    padding:7px 11px !important;
+    border-radius:10px;
+    border:1px solid #e2d5cc;
+    background:#fff;
+    color:#8a6d59;
+    font-size:13px;
+    line-height:1.2;
+    box-shadow:none;
+}
+
+.account-box .btn::after{
+    display:none;
+}
+
+.account-box .btn:hover{
+    transform:translateY(-50%);
+    background:#f8f2ed;
+    border-color:#cfb9aa;
+    box-shadow:none;
+}
+
+.account-box .btn:active{
+    transform:translateY(-50%) scale(.96);
+}
+
+@media screen and (max-width:480px){
+    .btn{
+        min-height:48px;
+        border-radius:13px;
+        font-size:15px;
+    }
+
+    .account-box{
+        padding:18px 76px 18px 18px !important;
+    }
+
+    .account-box .btn{
+        right:14px;
+    }
+}
+
+
+/* ===== 전체 여백 / 줄간격 컴팩트 조정 ===== */
+html,body{
+    line-height:1.7 !important;
+}
+
+section{
+    padding-top:50px !important;
+    padding-bottom:50px !important;
+}
+
+.section-title{
+    margin-bottom:26px !important;
+}
+
+.desc{
+    line-height:1.8 !important;
+}
+
+.info-row{
+    padding-top:9px !important;
+    padding-bottom:9px !important;
+}
+
+.transport-item{
+    margin-bottom:16px !important;
+}
+
+.transport-item p,
+.account-box p{
+    line-height:1.55 !important;
+}
+
+.ending-text{
+    line-height:1.9 !important;
+}
+
+.side-label{
+    margin-top:22px !important;
+    margin-bottom:10px !important;
+}
+
+.side-divider{
+    margin-top:27px !important;
+    margin-bottom:21px !important;
+}
+
+.account-box{
+    margin-top:10px !important;
+}
+
+.map-button-wrap{
+    margin-top:20px !important;
+}
+
+@media screen and (max-width:480px){
+    section{
+        padding-top:46px !important;
+        padding-bottom:46px !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -702,25 +905,7 @@ section{
 <h2 class="section-title">INVITATION</h2>
 <p class="desc" style="text-align:center;">작은 생명을 들여다보다 만나게 된 두사람이<br/>다정한 시간을 쌓아<br/>새로운 앞날을 약속하려 합니다.<br/>함께 자리하여 둘의 약속을 축복해주시면 감사하겠습니다.</p>
 </section>
-<section class="fade-up">
-<h2 class="section-title">INFORMATION</h2>
-<div class="info-list">
-<div class="info-row">
-<strong>일시</strong>
-<span>
-                    2026년 12월 6일 일요일<br/>
-                    오후 3시
-                </span>
-</div>
-<div class="info-row">
-<strong>장소</strong>
-<span>
-                    라비에벨 웨딩홀<br/>
-                    9층 단독홀
-                </span>
-</div>
-</div>
-</section>
+
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2>
 <div class="gallery">
