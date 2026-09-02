@@ -1068,6 +1068,34 @@ section > .btn.fill[onclick*="shareKakao"]{
         min-height:360px;
     }
 }
+
+/* PARKING / TRANSPORTATION: 항목명은 유지, 설명만 한 단계 작게 */
+.info-row strong{
+    font-size:inherit;
+}
+
+.info-row span{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.transport-item strong{
+    font-size:inherit;
+}
+
+.transport-item p{
+    font-size:14px !important;
+    line-height:1.65 !important;
+    color:#777;
+}
+
+@media screen and (max-width:480px){
+    .info-row span,
+    .transport-item p{
+        font-size:13.5px !important;
+    }
+}
+
 </style>
 </head>
 <body>
