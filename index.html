@@ -1096,6 +1096,93 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* ===== COUNTDOWN / CALENDAR clean minimal ===== */
+
+/* 남은시간: 카드 제거하고 숫자만 정갈하게 */
+.count-box{
+    gap:0 !important;
+    margin-top:22px !important;
+    padding:4px 0 2px;
+}
+
+.count-box div{
+    position:relative;
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    padding:10px 4px !important;
+}
+
+.count-box div:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:18%;
+    width:1px;
+    height:64%;
+    background:#eee7e2;
+}
+
+.count-box strong{
+    font-size:26px !important;
+    color:#806858 !important;
+}
+
+.count-box span{
+    margin-top:7px !important;
+    font-size:11px !important;
+    letter-spacing:.6px;
+    color:#aaa09a !important;
+}
+
+/* 달력: 둥근 카드/배경/그림자 제거 */
+.calendar-box{
+    margin-top:28px !important;
+    padding:22px 2px 4px !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    border-top:1px solid #eee7e2 !important;
+}
+
+.calendar-header{
+    margin-bottom:18px !important;
+    font-size:17px !important;
+    letter-spacing:2px;
+    color:#806858 !important;
+}
+
+.calendar-week div{
+    font-size:11px !important;
+    color:#aaa29d !important;
+}
+
+.calendar-days div{
+    font-size:14px !important;
+    color:#5e5753;
+}
+
+/* 결혼식 날짜만 은은하게 강조 */
+.wedding-day:before{
+    width:32px !important;
+    height:32px !important;
+    background:#8a6d59 !important;
+}
+
+@media screen and (max-width:480px){
+    .count-box strong{
+        font-size:24px !important;
+    }
+
+    .calendar-box{
+        padding-left:0 !important;
+        padding-right:0 !important;
+    }
+}
+
 </style>
 </head>
 <body>
