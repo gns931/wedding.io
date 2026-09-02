@@ -1290,6 +1290,96 @@ section > .btn.fill[onclick*="shareKakao"]{
     display:none !important;
 }
 
+
+/* ===== Latest mobile polish ===== */
+
+/* 떨어지는 장식 완전 비활성화 */
+.flower{
+    display:none !important;
+}
+
+/* HERO 여백 조정 */
+.hero{
+    padding-top:48px !important;
+    padding-bottom:38px !important;
+}
+
+/* 영훈 · 재인 위쪽 여백 확보 */
+.hero-copy{
+    margin-top:8px !important;
+    margin-bottom:28px !important;
+}
+
+/* 이름과 날짜 간격은 살짝 여유 */
+.hero-date{
+    margin-top:10px !important;
+}
+
+/* 날짜/시간과 메인사진 사이 여백 증가 */
+.hero-img{
+    margin-top:4px !important;
+}
+
+/* 메인사진과 웨딩홀명 사이 여백 증가 */
+.hero-venue{
+    margin-top:28px !important;
+}
+
+/* TRANSPORTATION 카드만 조금 더 컴팩트하게 */
+.transport-box{
+    padding:18px 22px !important;
+}
+
+.transport-item{
+    margin-bottom:12px !important;
+}
+
+.transport-item strong{
+    margin-bottom:4px !important;
+}
+
+.transport-item p{
+    line-height:1.55 !important;
+}
+
+.transport-item:nth-child(2) p br + br{
+    display:none;
+}
+
+/* 버스 두 묶음 사이 간격만 적당히 유지 */
+.transport-item:nth-child(2) p{
+    line-height:1.6 !important;
+}
+
+/* 자가용 문구 줄바꿈을 덜 답답하게 */
+.transport-item:last-child p{
+    line-height:1.6 !important;
+}
+
+@media screen and (max-width:480px){
+    .hero{
+        padding-top:52px !important;
+        padding-bottom:38px !important;
+    }
+
+    .hero-copy{
+        margin-top:8px !important;
+        margin-bottom:30px !important;
+    }
+
+    .hero-venue{
+        margin-top:30px !important;
+    }
+
+    .transport-box{
+        padding:17px 20px !important;
+    }
+
+    .transport-item{
+        margin-bottom:11px !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1389,8 +1479,7 @@ section > .btn.fill[onclick*="shareKakao"]{
 <div class="transport-item">
 <strong>자가용</strong>
 <p>
-                    네비게이션에<br/>
-                    ‘라비에벨웨딩’ 또는<br/>
+                    네비게이션에 ‘라비에벨웨딩’ 또는<br/>
                     ‘세이브존 상동점’ 검색
                 </p>
 </div>
@@ -1662,25 +1751,6 @@ window.addEventListener("scroll", function(){
     var progress = (scrollTop / height) * 100;
     document.getElementById("progressBar").style.width = progress + "%";
 });
-
-function createFlower(){
-    var flower = document.createElement("div");
-    flower.className = "flower";
-    flower.innerHTML = "❦";
-
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = (8 + Math.random() * 6) + "s";
-    flower.style.fontSize = (12 + Math.random() * 8) + "px";
-    flower.style.opacity = 0.35 + Math.random() * 0.35;
-
-    document.body.appendChild(flower);
-
-    setTimeout(function(){
-        flower.remove();
-    }, 15000);
-}
-
-setInterval(createFlower, 1400);
 
 function openParkingMap(type){
     var url = "";
