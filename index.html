@@ -889,63 +889,229 @@ section{
         padding-bottom:46px !important;
     }
 }
+
+/* ===== Modern mobile wedding renewal ===== */
+
+/* 1. Minimal HERO */
+.hero{
+    padding:28px 18px 30px !important;
+    text-align:center;
+    background:#fff;
+}
+.hero-copy{
+    margin-bottom:18px;
+}
+.hero-names{
+    font-size:28px;
+    letter-spacing:3px;
+    color:#2f2a27;
+    line-height:1.3;
+}
+.hero-date{
+    margin-top:8px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#9a8a80;
+}
+.hero-img{
+    height:68vh !important;
+    max-height:620px;
+    min-height:460px;
+    border-radius:18px !important;
+    object-fit:cover;
+    box-shadow:0 12px 30px rgba(55,38,27,.08);
+}
+.hero-venue{
+    margin-top:18px;
+    font-size:14px;
+    letter-spacing:.5px;
+    color:#70645d;
+}
+
+/* 2. 작고 가벼운 영문 타이틀 + 한글 서브타이틀 */
+.section-title{
+    margin-bottom:7px !important;
+    font-size:11px !important;
+    font-weight:400 !important;
+    letter-spacing:3.2px !important;
+    color:#b59d8b !important;
+}
+.section-subtitle{
+    margin-bottom:24px;
+    font-size:21px;
+    letter-spacing:.4px;
+    color:#3a3330;
+}
+section{
+    border-top:1px solid #f4efeb !important;
+}
+
+/* 3. LOCATION 카드 제거 */
+.location-simple{
+    margin:4px auto 22px;
+    text-align:center;
+}
+.location-name{
+    font-size:20px;
+    color:#332d29;
+}
+.location-hall{
+    margin-top:3px;
+    font-size:15px;
+    color:#786d66;
+}
+.location-address{
+    margin-top:14px;
+    font-size:14px;
+    line-height:1.65;
+    color:#8a807a;
+}
+.location-phone{
+    display:inline-block;
+    margin-top:8px;
+    color:#8a6d59;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* 4. Magazine gallery */
+.gallery{
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    grid-auto-flow:dense;
+    gap:8px !important;
+}
+.gallery img{
+    aspect-ratio:4 / 5 !important;
+    height:100% !important;
+    min-height:0;
+    border-radius:8px !important;
+    box-shadow:none !important;
+}
+.gallery img.gallery-wide{
+    grid-column:span 2;
+    aspect-ratio:16 / 11 !important;
+}
+.gallery img.gallery-tall{
+    grid-row:span 2;
+    aspect-ratio:auto !important;
+    min-height:430px;
+}
+
+/* 5. Account accordion */
+.account-accordion{
+    margin-top:12px;
+    border-top:1px solid #ece3dd;
+    border-bottom:1px solid #ece3dd;
+    background:#fff;
+}
+.account-accordion + .account-accordion{
+    margin-top:10px;
+}
+.account-accordion summary{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:17px 4px;
+    cursor:pointer;
+    color:#4d443f;
+    font-size:15px;
+}
+.account-accordion summary::-webkit-details-marker{
+    display:none;
+}
+.accordion-icon{
+    font-size:22px;
+    font-family:Arial,sans-serif;
+    font-weight:200;
+    color:#a48c7c;
+    transition:transform .2s ease;
+}
+.account-accordion[open] .accordion-icon{
+    transform:rotate(45deg);
+}
+.account-accordion-body{
+    padding:0 0 12px;
+}
+.account-accordion .account-box{
+    margin-top:8px !important;
+    border:0 !important;
+    border-radius:12px !important;
+    background:#faf7f4 !important;
+    box-shadow:none !important;
+}
+
+/* 정보 카드들도 덜 박스스럽게 */
+.info-list,
+.transport-box{
+    border-color:#eee6e0 !important;
+    box-shadow:none !important;
+    background:#fdfbf9 !important;
+}
+
+/* 메인 공유 버튼 살짝 더 강조 */
+section > .btn.fill[onclick*="shareKakao"]{
+    min-height:54px;
+    letter-spacing:.3px;
+}
+
+/* 모바일 */
+@media screen and (max-width:480px){
+    .hero-img{
+        height:66vh !important;
+        min-height:430px;
+    }
+    .section-subtitle{
+        font-size:20px;
+    }
+    .gallery img.gallery-tall{
+        min-height:360px;
+    }
+}
 </style>
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
 <div class="wrap">
 <div class="hero">
-<h1 class="hero-title">WE ARE GETTING MARRIED</h1>
+<div class="hero-copy">
+<div class="hero-names">영훈 · 재인</div>
+<div class="hero-date">2026.12.06 SUN · 3:00 PM</div>
+</div>
 <img alt="영훈 재인 웨딩사진" class="hero-img" src="images/13.jpg"/>
-<div class="names">영훈 · 재인</div>
-<div class="date-text">2026년 12월 6일 일요일 오후 3시</div>
-<div class="date-text">라비에벨 웨딩홀</div>
+<div class="hero-venue">라비에벨 웨딩홀</div>
 </div>
 <section class="fade-up">
-<h2 class="section-title">INVITATION</h2>
+<h2 class="section-title">INVITATION</h2><div class="section-subtitle">초대합니다</div>
 <p class="desc" style="text-align:center;">작은 생명을 들여다보다 만나게 된 두사람이<br/>다정한 시간을 쌓아<br/>새로운 앞날을 약속하려 합니다.<br/>함께 자리하여 둘의 약속을 축복해주시면 감사하겠습니다.</p>
 </section>
-
 <section class="fade-up">
-<h2 class="section-title">GALLERY</h2>
+<h2 class="section-title">GALLERY</h2><div class="section-subtitle">우리의 순간</div>
 <div class="gallery">
-<img alt="웨딩사진 1" src="images/1.jpg"/>
-<img alt="웨딩사진 2" src="images/2.jpg"/>
-<img alt="웨딩사진 3" src="images/3.jpg"/>
-<img alt="웨딩사진 4" src="images/4.jpg"/>
-<img alt="웨딩사진 5" src="images/5.jpg"/>
-<img alt="웨딩사진 6" src="images/6.jpg"/>
-<img alt="웨딩사진 7" src="images/7.jpg"/>
-<img alt="웨딩사진 8" src="images/8.jpg"/>
-<img alt="웨딩사진 9" src="images/9.jpg"/>
-<img alt="웨딩사진 10" src="images/10.jpg"/>
-<img alt="웨딩사진 11" src="images/11.jpg"/>
-<img alt="웨딩사진 12" src="images/12.jpg"/>
+<img alt="웨딩사진 1" class="gallery-wide" src="images/1.jpg"/>
+<img alt="웨딩사진 2" class="" src="images/2.jpg"/>
+<img alt="웨딩사진 3" class="gallery-tall" src="images/3.jpg"/>
+<img alt="웨딩사진 4" class="" src="images/4.jpg"/>
+<img alt="웨딩사진 5" class="" src="images/5.jpg"/>
+<img alt="웨딩사진 6" class="gallery-wide" src="images/6.jpg"/>
+<img alt="웨딩사진 7" class="" src="images/7.jpg"/>
+<img alt="웨딩사진 8" class="gallery-tall" src="images/8.jpg"/>
+<img alt="웨딩사진 9" class="" src="images/9.jpg"/>
+<img alt="웨딩사진 10" class="gallery-wide" src="images/10.jpg"/>
+<img alt="웨딩사진 11" class="" src="images/11.jpg"/>
+<img alt="웨딩사진 12" class="" src="images/12.jpg"/>
 </div>
 </section>
 <section class="fade-up">
-<h2 class="section-title">LOCATION</h2>
-<div class="info-list">
-<div class="info-row">
-<strong>웨딩홀</strong>
-<span>라비에벨 웨딩홀</span>
+<h2 class="section-title">LOCATION</h2><div class="section-subtitle">오시는 길</div>
+<div class="location-simple">
+<div class="location-name">라비에벨 웨딩홀</div>
+<div class="location-hall">9층 단독홀</div>
+<div class="location-address">경기도 부천시 원미구 길주로 105<br/>세이브존 9층 라비에벨웨딩</div>
+<a class="location-phone" href="tel:0323252000">032-325-2000</a>
 </div>
-<div class="info-row">
-<strong>예식홀</strong>
-<span>9층 단독홀</span>
-</div>
-<div class="info-row">
-<strong>주소</strong>
-<span>
-                    경기도 부천시 원미구 길주로 105<br/>
-                    세이브존 9층 라비에벨웨딩
-                </span>
-</div>
-<div class="info-row">
-<strong>연락처</strong>
-<span>032-325-2000</span>
-</div>
-</div>
+
+
 <div class="map-button-wrap">
 <button class="btn fill" onclick="openMap()">
                 카카오맵 길찾기
@@ -953,7 +1119,7 @@ section{
 </div>
 </section>
 <section class="fade-up">
-<h2 class="section-title">PARKING</h2>
+<h2 class="section-title">PARKING</h2><div class="section-subtitle">주차 안내</div>
 <div class="info-list">
 <div class="info-row">
 <strong>주차안내</strong>
@@ -978,7 +1144,7 @@ section{
 </div>
 </section>
 <section class="fade-up">
-<h2 class="section-title">TRANSPORTATION</h2>
+<h2 class="section-title">TRANSPORTATION</h2><div class="section-subtitle">교통 안내</div>
 <div class="transport-box">
 <div class="transport-item">
 <strong>지하철</strong>
@@ -1014,45 +1180,45 @@ section{
         </button>
 </section>
 <section class="fade-up">
-<h2 class="section-title">CONTACT</h2>
+<h2 class="section-title">CONTACT</h2><div class="section-subtitle">연락하기</div>
 <div class="contact-grid"><div class="side-label">신랑</div><button class="btn" onclick="location.href='tel:01073763575'">
                 신랑에게 연락
             </button><div class="side-divider"></div><div class="side-label">신부</div><button class="btn" onclick="location.href='tel:01038691805'">
                 신부에게 연락
             </button></div>
 </section>
-<section class="fade-up"><h2 class="section-title">ACCOUNT</h2>
-<div class="side-label">신랑측</div>
-<div class="account-box">
+<section class="fade-up"><h2 class="section-title">ACCOUNT</h2><div class="section-subtitle">마음 전하실 곳</div>
+
+
+
+
+
+
+
+
+<details class="account-accordion"><summary><span>신랑측 마음 전하실 곳</span><span class="accordion-icon">+</span></summary><div class="account-accordion-body"><div class="account-box">
 <strong>신랑 계좌</strong>
 <p>국민은행 843101-04-059400<br/>정영훈</p>
 <button class="btn" onclick="copyText('국민은행 843101-04-059400 정영훈')">복사</button>
-</div>
-<div class="account-box">
+</div><div class="account-box">
 <strong>신랑 아버지 계좌</strong>
 <p>국민은행 843102-04-178142<br/>정명국</p>
 <button class="btn" onclick="copyText('국민은행 843102-04-178142 정명국')">복사</button>
-</div>
-<div class="side-divider"></div>
-<div class="side-label">신부측</div>
-<div class="account-box">
+</div></div></details><details class="account-accordion"><summary><span>신부측 마음 전하실 곳</span><span class="accordion-icon">+</span></summary><div class="account-accordion-body"><div class="account-box">
 <strong>신부 계좌</strong>
 <p>케이뱅크 100-127-410100<br/>심재인</p>
 <button class="btn" onclick="copyText('케이뱅크 100-127-410100 심재인')">복사</button>
-</div>
-<div class="account-box">
+</div><div class="account-box">
 <strong>신부 아버지 계좌</strong>
 <p>국민은행 228-21-0543-004<br/>심동섭</p>
 <button class="btn" onclick="copyText('국민은행 228-21-0543-004 심동섭')">복사</button>
-</div>
-<div class="account-box">
+</div><div class="account-box">
 <strong>신부 어머니 계좌</strong>
 <p>신한은행 110-388-517451<br/>김지현</p>
 <button class="btn" onclick="copyText('신한은행 110-388-517451 김지현')">복사</button>
-</div>
-</section>
+</div></div></details></section>
 <section class="fade-up">
-<h2 class="section-title">COUNTDOWN</h2>
+<h2 class="section-title">COUNTDOWN</h2><div class="section-subtitle">결혼식까지</div>
 <div class="count-box">
 <div><strong id="countDay">0</strong><span>일</span></div>
 <div><strong id="countHour">0</strong><span>시간</span></div>
@@ -1338,6 +1504,15 @@ function updateWeddingCount(){
 
 updateWeddingCount();
 setInterval(updateWeddingCount, 1000);
+
+document.querySelectorAll('.account-accordion').forEach(function(item){
+    item.addEventListener('toggle', function(){
+        if(!item.open) return;
+        document.querySelectorAll('.account-accordion').forEach(function(other){
+            if(other !== item) other.open = false;
+        });
+    });
+});
 </script>
 </body>
 </html>
