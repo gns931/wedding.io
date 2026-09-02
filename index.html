@@ -1096,163 +1096,10 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
-
-/* ===== Final modern cleanup / section order preserved ===== */
-
-/* 꽃잎 / 진행바 완전 비활성화 */
-.progress-bar,.flower{display:none !important;}
-
-/* 교통/주차: 카드보다 얇은 구분선 중심 */
-.info-list,
-.transport-box{
-    max-width:380px !important;
-    padding:0 !important;
-    border:0 !important;
-    border-radius:0 !important;
-    background:transparent !important;
-    box-shadow:none !important;
-}
-
-.info-row{
-    align-items:flex-start;
-    padding:13px 2px !important;
-    border-bottom:1px solid #eee7e2 !important;
-}
-.info-row:first-child{
-    border-top:1px solid #eee7e2;
-}
-.info-row strong{
-    width:88px !important;
-}
-.info-row span{
-    color:#777 !important;
-}
-
-.transport-item{
-    position:relative;
-    margin:0 !important;
-    padding:17px 2px !important;
-    border-bottom:1px solid #eee7e2;
-}
-.transport-item:first-child{
-    border-top:1px solid #eee7e2;
-}
-.transport-item strong{
-    margin-bottom:7px !important;
-    color:#765f50 !important;
-}
-.transport-item p{
-    color:#85807c !important;
-}
-
-/* CONTACT: 큰 버튼 제거, 한 줄짜리 인물 행 */
-.contact-grid{
-    max-width:380px;
-    margin:0 auto !important;
-    border-top:1px solid #eee7e2;
-}
-.contact-person{
-    display:grid;
-    grid-template-columns:48px 1fr auto;
-    align-items:center;
-    min-height:62px;
-    padding:0 2px;
-    border-bottom:1px solid #eee7e2;
-    text-align:left;
-}
-.contact-role{
-    font-size:12px;
-    color:#aa9587;
-}
-.contact-name{
-    font-size:16px;
-    color:#39322e;
-}
-.contact-call{
-    min-width:52px;
-    padding:8px 12px;
-    border:1px solid #e3d8d0;
-    border-radius:10px;
-    background:#fff;
-    color:#806858;
-    font-family:inherit;
-    font-size:13px;
-    cursor:pointer;
-}
-.contact-call:active{
-    transform:scale(.96);
-}
-
-/* COUNTDOWN: D-DAY 하나만 크게 */
-.dday-simple{
-    padding:8px 0 24px;
-    text-align:center;
-}
-.dday-label{
-    display:block;
-    margin-bottom:10px;
-    font-size:10px;
-    letter-spacing:2.6px;
-    color:#b29b8b;
-}
-.dday-simple strong{
-    display:block;
-    font-size:42px;
-    line-height:1.15;
-    font-weight:400;
-    letter-spacing:1px;
-    color:#806858;
-}
-.dday-date{
-    display:block;
-    margin-top:10px;
-    font-size:13px;
-    letter-spacing:.8px;
-    color:#8f8580;
-}
-
-/* 달력도 박스 느낌을 한 단계 줄임 */
-.calendar-box{
-    margin-top:10px !important;
-    padding:18px 12px !important;
-    border:0 !important;
-    border-top:1px solid #eee7e2 !important;
-    border-bottom:1px solid #eee7e2 !important;
-    border-radius:0 !important;
-    background:transparent !important;
-    box-shadow:none !important;
-}
-
-/* 카카오 공유는 독립된 액션처럼, 섹션 여백 축소 */
-section:has(> .btn.fill[onclick*="shareKakao"]){
-    padding-top:30px !important;
-    padding-bottom:30px !important;
-    border-top:0 !important;
-}
-section > .btn.fill[onclick*="shareKakao"]{
-    max-width:380px;
-    margin:0 auto !important;
-}
-
-/* 엔딩을 조용하게 마무리 */
-.ending-text{
-    font-size:15px !important;
-    line-height:2 !important;
-    color:#766d68 !important;
-}
-.footer{
-    padding-top:30px !important;
-    padding-bottom:40px !important;
-    border-top:0 !important;
-    font-size:11px !important;
-    letter-spacing:1.2px;
-}
-
-/* 섹션 순서는 원본 그대로 유지 */
-
 </style>
 </head>
 <body>
+<div class="progress-bar" id="progressBar"></div>
 <div class="wrap">
 <div class="hero">
 <div class="hero-copy">
@@ -1362,18 +1209,11 @@ section > .btn.fill[onclick*="shareKakao"]{
 </section>
 <section class="fade-up">
 <h2 class="section-title">CONTACT</h2><div class="section-subtitle">연락하기</div>
-<div class="contact-grid">
-<div class="contact-person">
-    <div class="contact-role">신랑</div>
-    <div class="contact-name">정영훈</div>
-    <button class="contact-call" onclick="location.href='tel:01073763575'">전화</button>
-</div>
-<div class="contact-person">
-    <div class="contact-role">신부</div>
-    <div class="contact-name">심재인</div>
-    <button class="contact-call" onclick="location.href='tel:01038691805'">전화</button>
-</div>
-</div>
+<div class="contact-grid"><div class="side-label">신랑</div><button class="btn" onclick="location.href='tel:01073763575'">
+                신랑에게 연락
+            </button><div class="side-divider"></div><div class="side-label">신부</div><button class="btn" onclick="location.href='tel:01038691805'">
+                신부에게 연락
+            </button></div>
 </section>
 <section class="fade-up"><h2 class="section-title">ACCOUNT</h2><div class="section-subtitle">마음 전하실 곳</div>
 
@@ -1407,7 +1247,12 @@ section > .btn.fill[onclick*="shareKakao"]{
 </div></div></details></section>
 <section class="fade-up">
 <h2 class="section-title">COUNTDOWN</h2><div class="section-subtitle">결혼식까지</div>
-<div class="dday-simple"><span class="dday-label">WEDDING DAY</span><strong id="countDay">D-0</strong><span class="dday-date">2026.12.06 · 3:00 PM</span></div>
+<div class="count-box">
+<div><strong id="countDay">0</strong><span>일</span></div>
+<div><strong id="countHour">0</strong><span>시간</span></div>
+<div><strong id="countMin">0</strong><span>분</span></div>
+<div><strong id="countSec">0</strong><span>초</span></div>
+</div>
 <div class="calendar-box">
 <div class="calendar-header">
 <span>2026. 12</span>
@@ -1622,6 +1467,32 @@ function checkFade(){
 window.addEventListener("scroll", checkFade);
 window.addEventListener("load", checkFade);
 
+window.addEventListener("scroll", function(){
+    var scrollTop = document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = (scrollTop / height) * 100;
+    document.getElementById("progressBar").style.width = progress + "%";
+});
+
+function createFlower(){
+    var flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerHTML = "❦";
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (8 + Math.random() * 6) + "s";
+    flower.style.fontSize = (12 + Math.random() * 8) + "px";
+    flower.style.opacity = 0.35 + Math.random() * 0.35;
+
+    document.body.appendChild(flower);
+
+    setTimeout(function(){
+        flower.remove();
+    }, 15000);
+}
+
+setInterval(createFlower, 1400);
+
 function openParkingMap(type){
     var url = "";
 
@@ -1644,21 +1515,23 @@ function updateWeddingCount(){
     var weddingDate = new Date("2026-12-06T15:00:00").getTime();
     var now = new Date().getTime();
     var distance = weddingDate - now;
-    var dayEl = document.getElementById("countDay");
-
-    if(!dayEl) return;
 
     if(distance <= 0){
-        dayEl.innerText = "D-DAY";
+        document.getElementById("countDay").innerText = "0";
+        document.getElementById("countHour").innerText = "0";
+        document.getElementById("countMin").innerText = "0";
+        document.getElementById("countSec").innerText = "0";
         return;
     }
 
-    var days = Math.ceil(distance / (1000 * 60 * 60 * 24));
-    dayEl.innerText = "D-" + days;
+    document.getElementById("countDay").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countHour").innerText = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    document.getElementById("countMin").innerText = Math.floor((distance / (1000 * 60)) % 60);
+    document.getElementById("countSec").innerText = Math.floor((distance / 1000) % 60);
 }
 
 updateWeddingCount();
-setInterval(updateWeddingCount, 60000);
+setInterval(updateWeddingCount, 1000);
 
 document.querySelectorAll('.account-accordion').forEach(function(item){
     item.addEventListener('toggle', function(){
