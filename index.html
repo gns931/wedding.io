@@ -13,78 +13,6 @@
 <meta content="https://gns931.github.io/wedding.io/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <script src="https://developers.kakao.com/sdk/js/kakao.js">
-var touchStartX = 0;
-var touchStartY = 0;
-var touchMoveX = 0;
-var touchMoveY = 0;
-var isSwiping = false;
-
-var modal = document.getElementById("imageModal");
-var modalImg = document.getElementById("modalImg");
-
-modal.addEventListener("touchstart", function(e){
-    if(e.touches.length !== 1) return;
-
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    touchMoveX = touchStartX;
-    touchMoveY = touchStartY;
-    isSwiping = true;
-
-    modalImg.classList.remove("swipe-animate");
-}, {passive:true});
-
-modal.addEventListener("touchmove", function(e){
-    if(!isSwiping || e.touches.length !== 1) return;
-
-    touchMoveX = e.touches[0].clientX;
-    touchMoveY = e.touches[0].clientY;
-
-    var diffX = touchMoveX - touchStartX;
-    var diffY = touchMoveY - touchStartY;
-
-    /* 가로 움직임이 세로 움직임보다 클 때만 사진을 따라 움직이게 */
-    if(Math.abs(diffX) > Math.abs(diffY)){
-        modalImg.style.transform = "translateX(" + (diffX * 0.35) + "px)";
-        modalImg.style.opacity = Math.max(0.65, 1 - Math.abs(diffX) / 500);
-    }
-}, {passive:true});
-
-modal.addEventListener("touchend", function(){
-    if(!isSwiping) return;
-    isSwiping = false;
-
-    var diffX = touchMoveX - touchStartX;
-    var diffY = touchMoveY - touchStartY;
-
-    modalImg.classList.add("swipe-animate");
-
-    if(Math.abs(diffX) > 55 && Math.abs(diffX) > Math.abs(diffY)){
-        if(diffX < 0){
-            currentImageIndex++;
-            if(currentImageIndex >= galleryImages.length){
-                currentImageIndex = 0;
-            }
-        }else{
-            currentImageIndex--;
-            if(currentImageIndex < 0){
-                currentImageIndex = galleryImages.length - 1;
-            }
-        }
-
-        modalImg.style.opacity = "0";
-
-        setTimeout(function(){
-            updateModalImage();
-            modalImg.style.transform = "translateX(0)";
-            modalImg.style.opacity = "1";
-        }, 120);
-    }else{
-        modalImg.style.transform = "translateX(0)";
-        modalImg.style.opacity = "1";
-    }
-}, {passive:true});
-
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -1345,6 +1273,23 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* 모바일 스와이프 안정화 */
+.image-modal{
+    overflow:hidden !important;
+}
+#modalImg{
+    touch-action:pan-y !important;
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-user-drag:none;
+    transition:transform .16s ease;
+}
+.modal-arrow,
+.modal-count{
+    display:none !important;
+}
+
 </style>
 </head>
 <body>
@@ -1785,6 +1730,67 @@ document.querySelectorAll('.account-accordion').forEach(function(item){
         });
     });
 });
+
+/* 모바일 갤러리 스와이프 */
+(function(){
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImg");
+    if(!modal || !modalImg) return;
+
+    var startX = 0;
+    var startY = 0;
+    var endX = 0;
+    var endY = 0;
+
+    modalImg.addEventListener("touchstart", function(e){
+        if(e.touches.length !== 1) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        endX = startX;
+        endY = startY;
+    }, {passive:true});
+
+    modalImg.addEventListener("touchmove", function(e){
+        if(e.touches.length !== 1) return;
+
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+
+        var dx = endX - startX;
+        var dy = endY - startY;
+
+        if(Math.abs(dx) > Math.abs(dy)){
+            /* 가로 스와이프 중에는 브라우저의 기본 이미지 드래그 느낌만 억제 */
+            modalImg.style.transform = "translateX(" + (dx * 0.22) + "px)";
+        }
+    }, {passive:true});
+
+    modalImg.addEventListener("touchend", function(){
+        var dx = endX - startX;
+        var dy = endY - startY;
+
+        modalImg.style.transform = "translateX(0)";
+
+        if(Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)){
+            return;
+        }
+
+        if(dx < 0){
+            currentImageIndex++;
+            if(currentImageIndex >= galleryImages.length){
+                currentImageIndex = 0;
+            }
+        }else{
+            currentImageIndex--;
+            if(currentImageIndex < 0){
+                currentImageIndex = galleryImages.length - 1;
+            }
+        }
+
+        updateModalImage();
+    }, {passive:true});
+})();
+
 </script>
 </body>
 </html>
