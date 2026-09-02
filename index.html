@@ -633,6 +633,59 @@ section{
     margin:34px auto 26px;
     background:#e5d8cf;
 }
+
+/* CONTACT / ACCOUNT: 화면이 넓어져도 신랑·신부 구분을 세로로 고정 */
+.contact-grid{
+    display:block !important;
+    grid-template-columns:1fr !important;
+}
+
+.contact-grid .side-label{
+    display:block !important;
+    width:100% !important;
+    text-align:center !important;
+}
+
+.contact-grid .btn{
+    display:block !important;
+    width:100% !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+.side-divider{
+    display:block !important;
+    clear:both !important;
+    width:42px !important;
+    max-width:42px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+/* ACCOUNT 카드도 항상 한 줄에 하나씩 */
+.account-box{
+    display:block !important;
+    float:none !important;
+    flex:none !important;
+    width:100% !important;
+    max-width:none !important;
+}
+
+/* 기존 데스크톱용 2열/가로배치 규칙이 있어도 무조건 세로 유지 */
+@media screen and (min-width:481px){
+    .contact-grid{
+        display:block !important;
+        grid-template-columns:1fr !important;
+    }
+
+    .contact-grid .btn,
+    .account-box{
+        width:100% !important;
+        max-width:none !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -783,37 +836,36 @@ section{
                 신부에게 연락
             </button></div>
 </section>
-<section class="fade-up">
-<h2 class="section-title">ACCOUNT</h2>
-
-
-
-
-
-
-<div class="side-label">신랑측</div><div class="account-box">
-<strong>신랑측 계좌</strong>
+<section class="fade-up"><h2 class="section-title">ACCOUNT</h2>
+<div class="side-label">신랑측</div>
+<div class="account-box">
+<strong>신랑 계좌</strong>
 <p>국민은행 843101-04-059400<br/>정영훈</p>
 <button class="btn" onclick="copyText('국민은행 843101-04-059400 정영훈')">계좌번호 복사</button>
-</div><div class="account-box">
+</div>
+<div class="account-box">
 <strong>신랑 아버지 계좌</strong>
 <p>국민은행 843102-04-178142<br/>정명국</p>
 <button class="btn" onclick="copyText('국민은행 843102-04-178142 정명국')">계좌번호 복사</button>
-</div><div class="account-box">
-
-</div><div class="side-divider"></div><div class="side-label">신부측</div><div class="account-box">
-<strong>신부측 계좌</strong>
+</div>
+<div class="side-divider"></div>
+<div class="side-label">신부측</div>
+<div class="account-box">
+<strong>신부 계좌</strong>
 <p>케이뱅크 100-127-410100<br/>심재인</p>
 <button class="btn" onclick="copyText('케이뱅크 100-127-410100 심재인')">계좌번호 복사</button>
-</div><div class="account-box">
+</div>
+<div class="account-box">
 <strong>신부 아버지 계좌</strong>
 <p>국민은행 228-21-0543-004<br/>심동섭</p>
 <button class="btn" onclick="copyText('국민은행 228-21-0543-004 심동섭')">계좌번호 복사</button>
-</div><div class="account-box">
+</div>
+<div class="account-box">
 <strong>신부 어머니 계좌</strong>
 <p>신한은행 110-388-517451<br/>김지현</p>
 <button class="btn" onclick="copyText('신한은행 110-388-517451 김지현')">계좌번호 복사</button>
-</div></section>
+</div>
+</section>
 <section class="fade-up">
 <h2 class="section-title">COUNTDOWN</h2>
 <div class="count-box">
