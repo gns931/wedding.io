@@ -1380,10 +1380,57 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* ===== Final cleanup ===== */
+
+/* 진행바 제거 */
+.progress-bar{
+    display:none !important;
+}
+
+/* 카카오 공유 섹션 여백 축소 */
+section:has(> .btn.fill[onclick*="shareKakao"]){
+    padding-top:30px !important;
+    padding-bottom:30px !important;
+}
+
+section > .btn.fill[onclick*="shareKakao"]{
+    margin-top:0 !important;
+}
+
+/* CONTACT 구분선 제거 후 간격 정리 */
+.contact-grid .side-label{
+    margin-top:18px !important;
+    margin-bottom:8px !important;
+}
+
+.contact-grid .side-label:first-child{
+    margin-top:0 !important;
+}
+
+.contact-grid .btn{
+    margin-top:8px !important;
+}
+
+.contact-grid .side-label + .btn + .side-label{
+    margin-top:24px !important;
+}
+
+/* 엔딩 문구 조금 더 컴팩트하게 */
+.ending-text{
+    line-height:1.85 !important;
+}
+
+@media screen and (max-width:480px){
+    section:has(> .btn.fill[onclick*="shareKakao"]){
+        padding-top:26px !important;
+        padding-bottom:26px !important;
+    }
+}
+
 </style>
 </head>
 <body>
-<div class="progress-bar" id="progressBar"></div>
 <div class="wrap">
 <div class="hero">
 <div class="hero-copy">
@@ -1494,7 +1541,7 @@ section > .btn.fill[onclick*="shareKakao"]{
 <h2 class="section-title">CONTACT</h2><div class="section-subtitle">연락하기</div>
 <div class="contact-grid"><div class="side-label">신랑</div><button class="btn" onclick="location.href='tel:01073763575'">
                 신랑에게 연락
-            </button><div class="side-divider"></div><div class="side-label">신부</div><button class="btn" onclick="location.href='tel:01038691805'">
+            </button><div class="side-label">신부</div><button class="btn" onclick="location.href='tel:01038691805'">
                 신부에게 연락
             </button></div>
 </section>
@@ -1744,13 +1791,6 @@ function checkFade(){
 
 window.addEventListener("scroll", checkFade);
 window.addEventListener("load", checkFade);
-
-window.addEventListener("scroll", function(){
-    var scrollTop = document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = (scrollTop / height) * 100;
-    document.getElementById("progressBar").style.width = progress + "%";
-});
 
 function openParkingMap(type){
     var url = "";
