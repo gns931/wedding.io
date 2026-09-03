@@ -12,8 +12,7 @@
 <meta content="https://gns931.github.io/wedding.io/images/KakaoTalk_20260520_151817826" property="og:image"/>
 <meta content="https://gns931.github.io/wedding.io/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script src="https://developers.kakao.com/sdk/js/kakao.js">
-</script>
+<script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -1726,7 +1725,7 @@ section > .btn.fill[onclick*="shareKakao"]{
 <div class="hero-names">영훈 · 재인</div>
 <div class="hero-date">2026.12.06 SUN · 3:00 PM</div>
 </div>
-<img alt="영훈 재인 웨딩사진" class="hero-img" src="images/13.jpg"/>
+<img fetchpriority="high" decoding="async" alt="영훈 재인 웨딩사진" class="hero-img" src="images/13.jpg"/>
 <div class="hero-venue">라비에벨 웨딩홀</div>
 </div>
 <section class="fade-up">
@@ -1736,18 +1735,18 @@ section > .btn.fill[onclick*="shareKakao"]{
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2><div class="section-subtitle">우리의 순간</div>
 <div class="gallery">
-<img alt="웨딩사진 1" class="gallery-wide" src="images/1.jpg"/>
-<img alt="웨딩사진 2" class="" src="images/2.jpg"/>
-<img alt="웨딩사진 3" class="gallery-tall" src="images/3.jpg"/>
-<img alt="웨딩사진 4" class="" src="images/4.jpg"/>
-<img alt="웨딩사진 5" class="" src="images/5.jpg"/>
-<img alt="웨딩사진 6" class="gallery-wide" src="images/6.jpg"/>
-<img alt="웨딩사진 7" class="" src="images/7.jpg"/>
-<img alt="웨딩사진 8" class="gallery-tall" src="images/8.jpg"/>
-<img alt="웨딩사진 9" class="" src="images/9.jpg"/>
-<img alt="웨딩사진 10" class="gallery-wide" src="images/10.jpg"/>
-<img alt="웨딩사진 11" class="" src="images/11.jpg"/>
-<img alt="웨딩사진 12" class="" src="images/12.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 1" class="gallery-wide" src="images/1.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 2" class="" src="images/2.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 3" class="gallery-tall" src="images/3.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 4" class="" src="images/4.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 5" class="" src="images/5.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 6" class="gallery-wide" src="images/6.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 7" class="" src="images/7.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 8" class="gallery-tall" src="images/8.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 9" class="" src="images/9.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 10" class="gallery-wide" src="images/10.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 11" class="" src="images/11.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 12" class="" src="images/12.jpg"/>
 </div>
 </section>
 <section class="fade-up">
@@ -1946,9 +1945,17 @@ section > .btn.fill[onclick*="shareKakao"]{
     카카오 개발자센터에서 JavaScript 키 발급 후 아래에 넣으세요.
     예: Kakao.init('abc123...');
 */
-Kakao.init('4a8638f53f4ea351b62596155bd280bb');
+window.addEventListener("load", function(){
+    if(window.Kakao && !Kakao.isInitialized()){
+        Kakao.init('4a8638f53f4ea351b62596155bd280bb');
+    }
+});
 
 function shareKakao(){
+    if(!window.Kakao || !Kakao.Share){
+        alert("공유 기능을 불러오는 중입니다. 잠시 후 다시 눌러주세요.");
+        return;
+    }
     Kakao.Share.sendDefault({
         objectType:'feed',
         content:{
@@ -2004,6 +2011,8 @@ function initGallery(){
 
             var img = document.createElement("img");
             img.src = galleryImages[j].src;
+            img.loading = "lazy";
+            img.decoding = "async";
             img.alt = "";
 
             btn.appendChild(img);
@@ -2017,14 +2026,6 @@ function initGallery(){
             thumbs.appendChild(btn);
         }
     }
-
-    /* 확대 슬라이드 전환 시 버벅임을 줄이기 위해 미리 디코딩 */
-    for(var k = 0; k < galleryImages.length; k++){
-        var preload = new Image();
-        preload.src = galleryImages[k].src;
-        if(preload.decode){
-            preload.decode().catch(function(){});
-        }
     }
 }
 
@@ -2054,6 +2055,17 @@ function updateModalImage(){
         var left = target.offsetLeft - (strip.clientWidth - target.offsetWidth) / 2;
         strip.scrollTo({left:Math.max(0,left), behavior:"auto"});
     }
+
+    var prevIndex = currentImageIndex - 1;
+    if(prevIndex < 0) prevIndex = galleryImages.length - 1;
+
+    var nextIndex = currentImageIndex + 1;
+    if(nextIndex >= galleryImages.length) nextIndex = 0;
+
+    [prevIndex, nextIndex].forEach(function(idx){
+        var preload = new Image();
+        preload.src = galleryImages[idx].src;
+    });
 }
 
 function closeImage(){
