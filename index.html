@@ -1638,6 +1638,78 @@ section > .btn.fill[onclick*="shareKakao"]{
     transform:scale(.92);
 }
 
+
+/* ===== Modal X / swipe performance / bus routes ===== */
+
+/* X를 사진과 겹치지 않게 상단 별도 영역에 배치 */
+.image-modal{
+    padding-top:64px !important;
+}
+
+.modal-close{
+    top:10px !important;
+    right:16px !important;
+    z-index:2;
+}
+
+/* 스와이프 중 과도한 이미지 repaint 방지 */
+#modalImg{
+    transition:none !important;
+    will-change:auto !important;
+    transform:none !important;
+}
+#modalImg.is-swiping{
+    transition:none !important;
+}
+
+/* 버스 노선 구분 */
+.bus-routes{
+    font-size:15px;
+    line-height:1.65;
+    color:#777;
+}
+
+.bus-stop{
+    color:#555;
+    line-height:1.55;
+}
+
+.bus-stop.second{
+    margin-top:18px;
+}
+
+.bus-numbers{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:7px;
+    color:#555;
+    font-size:9px;
+    line-height:1.8;
+}
+
+.bus-numbers span{
+    font-size:15px;
+    line-height:1.6;
+    color:#777;
+}
+
+@media screen and (max-width:480px){
+    .image-modal{
+        padding-top:58px !important;
+    }
+
+    .modal-close{
+        top:7px !important;
+        right:12px !important;
+    }
+
+    .bus-routes,
+    .bus-numbers span{
+        font-size:15px !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1724,14 +1796,13 @@ section > .btn.fill[onclick*="shareKakao"]{
 </div>
 <div class="transport-item">
 <strong>버스</strong>
-<p>
-                    상동역7번출구·세이브존 하차<br/>
-                    5-4, 16, 33, 50-1, 83
-                    <br/><br/>
+<div class="bus-routes">
+                    <div class="bus-stop">상동역7번출구·세이브존 하차</div>
+                    <div class="bus-numbers">● <span>5-4, 16, 33, 50-1, 83</span></div>
 
-                    상동역8번출구·세이브존 하차<br/>
-                    6-2, 23-2, 24, 37, 52, 59, 66, 70, 87
-                </p>
+                    <div class="bus-stop second">상동역8번출구·세이브존 하차</div>
+                    <div class="bus-numbers">● <span>6-2, 23-2, 24, 37, 50-1, 52, 59, 59-1, 66, 70, 87</span></div>
+                </div>
 </div>
 <div class="transport-item">
 <strong>자가용</strong>
@@ -1939,6 +2010,15 @@ function initGallery(){
             thumbs.appendChild(btn);
         }
     }
+
+    /* 확대 슬라이드 전환 시 버벅임을 줄이기 위해 미리 디코딩 */
+    for(var k = 0; k < galleryImages.length; k++){
+        var preload = new Image();
+        preload.src = galleryImages[k].src;
+        if(preload.decode){
+            preload.decode().catch(function(){});
+        }
+    }
 }
 
 function openImage(index){
@@ -1949,7 +2029,12 @@ function openImage(index){
 }
 
 function updateModalImage(){
-    document.getElementById("modalImg").src = galleryImages[currentImageIndex].src;
+    var modalImg = document.getElementById("modalImg");
+    var nextSrc = galleryImages[currentImageIndex].src;
+
+    if(modalImg.src !== nextSrc){
+        modalImg.src = nextSrc;
+    }
 
     var thumbs = document.querySelectorAll(".modal-thumb");
     for(var i = 0; i < thumbs.length; i++){
@@ -1957,11 +2042,10 @@ function updateModalImage(){
     }
 
     if(thumbs[currentImageIndex]){
-        thumbs[currentImageIndex].scrollIntoView({
-            behavior:"smooth",
-            block:"nearest",
-            inline:"center"
-        });
+        var strip = document.getElementById("modalThumbs");
+        var target = thumbs[currentImageIndex];
+        var left = target.offsetLeft - (strip.clientWidth - target.offsetWidth) / 2;
+        strip.scrollTo({left:Math.max(0,left), behavior:"auto"});
     }
 }
 
@@ -2120,9 +2204,9 @@ document.querySelectorAll('.account-accordion').forEach(function(item){
         var dx = endX - startX;
         var dy = endY - startY;
 
+        /* 이동 중 이미지를 계속 그리지 않고 방향/거리만 계산 */
         if(Math.abs(dx) > Math.abs(dy)){
-            /* 가로 스와이프 중에는 브라우저의 기본 이미지 드래그 느낌만 억제 */
-            modalImg.style.transform = "translateX(" + (dx * 0.22) + "px)";
+            modalImg.classList.add("is-swiping");
         }
     }, {passive:true});
 
@@ -2130,7 +2214,8 @@ document.querySelectorAll('.account-accordion').forEach(function(item){
         var dx = endX - startX;
         var dy = endY - startY;
 
-        modalImg.style.transform = "translateX(0)";
+        modalImg.classList.remove("is-swiping");
+        modalImg.style.transform = "";
 
         if(Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)){
             return;
