@@ -1716,9 +1716,16 @@ section > .btn.fill[onclick*="shareKakao"]{
     gap:8px !important;
 }
 
+
+/* JS 오류 시에도 본문이 보이도록 하는 안전장치 */
+.no-js-fallback .fade-up{
+    opacity:1 !important;
+    transform:none !important;
+}
+
 </style>
 </head>
-<body>
+<body class="no-js-fallback">
 <div class="wrap">
 <div class="hero">
 <div class="hero-copy">
@@ -1941,6 +1948,7 @@ section > .btn.fill[onclick*="shareKakao"]{
 <div class="modal-thumbs" id="modalThumbs"></div>
 </div>
 <script>
+document.body.classList.remove("no-js-fallback");
 /*
     카카오 개발자센터에서 JavaScript 키 발급 후 아래에 넣으세요.
     예: Kakao.init('abc123...');
@@ -2025,7 +2033,6 @@ function initGallery(){
 
             thumbs.appendChild(btn);
         }
-    }
     }
 }
 
