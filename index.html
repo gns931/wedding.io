@@ -1484,6 +1484,55 @@ section > .btn.fill[onclick*="shareKakao"]{
     }
 }
 
+
+/* PARKING / TRANSPORTATION: 항목명 16px 유지, 내용 15px */
+.info-row span,
+.transport-item p{
+    font-size:15px !important;
+}
+@media screen and (max-width:480px){
+    .info-row span,
+    .transport-item p{
+        font-size:15px !important;
+    }
+}
+
+
+/* ===== GALLERY: 동일 크기 3열형 ===== */
+.gallery{
+    display:grid !important;
+    grid-template-columns:repeat(3, minmax(0,1fr)) !important;
+    grid-auto-flow:row !important;
+    gap:7px !important;
+    margin-top:10px !important;
+}
+
+.gallery img,
+.gallery img.gallery-wide,
+.gallery img.gallery-tall{
+    grid-column:auto !important;
+    grid-row:auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    aspect-ratio:1 / 1 !important;
+    object-fit:cover !important;
+    border-radius:7px !important;
+    box-shadow:none !important;
+}
+
+/* 우선 9장만 그리드에 표시.
+   10~12번은 확대 슬라이드에서는 계속 볼 수 있음 */
+.gallery img:nth-child(n+10){
+    display:none !important;
+}
+
+@media screen and (max-width:480px){
+    .gallery{
+        gap:6px !important;
+    }
+}
+
 </style>
 </head>
 <body>
