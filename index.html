@@ -1723,6 +1723,17 @@ section > .btn.fill[onclick*="shareKakao"]{
     transform:none !important;
 }
 
+
+/* ===== Modal open: background scroll lock ===== */
+body.modal-open{
+    overflow:hidden !important;
+    touch-action:none;
+}
+
+.image-modal{
+    overscroll-behavior:contain;
+}
+
 </style>
 </head>
 <body class="no-js-fallback">
@@ -2039,6 +2050,7 @@ function initGallery(){
 function openImage(index){
     currentImageIndex = index;
 
+    document.body.classList.add("modal-open");
     document.getElementById("imageModal").style.display = "flex";
     updateModalImage();
 }
@@ -2077,6 +2089,7 @@ function updateModalImage(){
 
 function closeImage(){
     document.getElementById("imageModal").style.display = "none";
+    document.body.classList.remove("modal-open");
 }
 
 function prevImage(event){
