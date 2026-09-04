@@ -1734,6 +1734,30 @@ body.modal-open{
     overscroll-behavior:contain;
 }
 
+
+/* GALLERY 1~15 전체 표시 */
+.gallery{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    grid-auto-flow:row !important;
+    gap:6px !important;
+}
+.gallery img,
+.gallery img.gallery-wide,
+.gallery img.gallery-tall,
+.gallery img:nth-child(n+10){
+    display:block !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    aspect-ratio:1 / 1 !important;
+    object-fit:cover !important;
+    border-radius:7px !important;
+    box-shadow:none !important;
+}
+
 </style>
 </head>
 <body class="no-js-fallback">
@@ -1743,7 +1767,7 @@ body.modal-open{
 <div class="hero-names">영훈 · 재인</div>
 <div class="hero-date">2026.12.06 SUN · 3:00 PM</div>
 </div>
-<img fetchpriority="high" decoding="async" alt="영훈 재인 웨딩사진" class="hero-img" src="images/13.jpg"/>
+<img fetchpriority="high" decoding="async" alt="영훈 재인 웨딩사진" class="hero-img" src="images/main.jpg"/>
 <div class="hero-venue">라비에벨 웨딩홀</div>
 </div>
 <section class="fade-up">
@@ -1753,18 +1777,21 @@ body.modal-open{
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2><div class="section-subtitle">우리의 순간</div>
 <div class="gallery">
-<img loading="lazy" decoding="async" alt="웨딩사진 1" class="gallery-wide" src="images/1.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 2" class="" src="images/2.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 3" class="gallery-tall" src="images/3.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 4" class="" src="images/4.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 5" class="" src="images/5.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 6" class="gallery-wide" src="images/6.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 7" class="" src="images/7.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 8" class="gallery-tall" src="images/8.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 9" class="" src="images/9.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 10" class="gallery-wide" src="images/10.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 11" class="" src="images/11.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 12" class="" src="images/12.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 1" src="images/1.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 2" src="images/2.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 3" src="images/3.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 4" src="images/4.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 5" src="images/5.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 6" src="images/6.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 7" src="images/7.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 8" src="images/8.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 9" src="images/9.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 10" src="images/10.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 11" src="images/11.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 12" src="images/12.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 13" src="images/13.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 14" src="images/14.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 15" src="images/15.jpg"/>
 </div>
 </section>
 <section class="fade-up">
