@@ -1758,6 +1758,17 @@ body.modal-open{
     box-shadow:none !important;
 }
 
+
+/* 우리의 순간 제목과 사진 사이 간격을 아주 살짝 확대 */
+.gallery{
+    margin-top:18px !important;
+}
+@media (max-width:480px){
+    .gallery{
+        margin-top:16px !important;
+    }
+}
+
 </style>
 </head>
 <body class="no-js-fallback">
@@ -1777,21 +1788,21 @@ body.modal-open{
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2><div class="section-subtitle">우리의 순간</div>
 <div class="gallery">
-<img loading="lazy" decoding="async" alt="웨딩사진 1" src="images/1.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 2" src="images/2.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 3" src="images/3.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 4" src="images/4.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 5" src="images/5.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 6" src="images/6.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 7" src="images/7.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 8" src="images/8.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 9" src="images/9.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 10" src="images/10.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 11" src="images/11.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 12" src="images/12.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 13" src="images/13.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 14" src="images/14.jpg"/>
-<img loading="lazy" decoding="async" alt="웨딩사진 15" src="images/15.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 1" src="images/1_thumb.jpg" data-full="images/1.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 2" src="images/2_thumb.jpg" data-full="images/2.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 3" src="images/3_thumb.jpg" data-full="images/3.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 4" src="images/4_thumb.jpg" data-full="images/4.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 5" src="images/5_thumb.jpg" data-full="images/5.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 6" src="images/6_thumb.jpg" data-full="images/6.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 7" src="images/7_thumb.jpg" data-full="images/7.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 8" src="images/8_thumb.jpg" data-full="images/8.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 9" src="images/9_thumb.jpg" data-full="images/9.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 10" src="images/10_thumb.jpg" data-full="images/10.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 11" src="images/11_thumb.jpg" data-full="images/11.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 12" src="images/12_thumb.jpg" data-full="images/12.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 13" src="images/13_thumb.jpg" data-full="images/13.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 14" src="images/14_thumb.jpg" data-full="images/14.jpg"/>
+<img loading="lazy" decoding="async" alt="웨딩사진 15" src="images/15_thumb.jpg" data-full="images/15.jpg"/>
 </div>
 </section>
 <section class="fade-up">
@@ -2084,7 +2095,7 @@ function openImage(index){
 
 function updateModalImage(){
     var modalImg = document.getElementById("modalImg");
-    var nextSrc = galleryImages[currentImageIndex].src;
+    var nextSrc = galleryImages[currentImageIndex].dataset.full || galleryImages[currentImageIndex].src;
 
     if(modalImg.src !== nextSrc){
         modalImg.src = nextSrc;
@@ -2110,7 +2121,7 @@ function updateModalImage(){
 
     [prevIndex, nextIndex].forEach(function(idx){
         var preload = new Image();
-        preload.src = galleryImages[idx].src;
+        preload.src = galleryImages[idx].dataset.full || galleryImages[idx].src;
     });
 }
 
