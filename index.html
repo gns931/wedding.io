@@ -1769,6 +1769,38 @@ body.modal-open{
     }
 }
 
+.family-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 42px auto 0;
+    max-width: 460px;
+    text-align: center;
+}
+
+.family-side {
+    flex: 1;
+    min-width: 0;
+}
+
+.family-parents,
+.family-name {
+    font-size: 17px;
+    color: #333;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.family-relation {
+    font-size: 13px;
+    color: #777;
+    margin-left: 4px;
+}
+
+.family-name {
+    margin-top: 14px;
+}
+
 </style>
 <link rel="preload" as="image" href="images/1_thumb.jpg" fetchpriority="low">
 <link rel="preload" as="image" href="images/2_thumb.jpg" fetchpriority="low">
@@ -1807,17 +1839,23 @@ body.modal-open{
         함께 자리하여 둘의 약속을 축복해주시면 감사하겠습니다.
     </p>
 
-    <div class="family-info">
-        <div class="family-side">
-            <div class="family-parents">정명국 · 이난경의 아들</div>
-            <div class="family-name">정영훈</div>
+    
+<div class="family-info">
+    <div class="family-side">
+        <div class="family-parents">
+            정명국 · 이난경<span class="family-relation">의 아들</span>
         </div>
-
-        <div class="family-side">
-            <div class="family-parents">심동섭 · 김지현의 딸</div>
-            <div class="family-name">심재인</div>
-        </div>
+        <div class="family-name">정영훈</div>
     </div>
+
+    <div class="family-side">
+        <div class="family-parents">
+            심동섭 · 김지현<span class="family-relation">의 딸</span>
+        </div>
+        <div class="family-name">심재인</div>
+    </div>
+</div>
+
 </section>
 <section class="fade-up">
 <h2 class="section-title">GALLERY</h2><div class="section-subtitle">우리의 순간</div>
