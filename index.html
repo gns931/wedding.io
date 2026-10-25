@@ -1771,17 +1771,21 @@ body.modal-open{
 
 
 
+
 .family-info {
     margin: 42px auto 0;
     text-align: center;
+    border: none !important;
 }
 
 .family-row {
     display: grid;
-    grid-template-columns: 1fr 55px 65px;
+    grid-template-columns: 145px 48px 60px;
     align-items: baseline;
-    max-width: 340px;
+    justify-content: center;
     margin: 0 auto 18px;
+    padding: 0;
+    border: none !important;
     font-size: 17px;
     color: #333;
 }
@@ -1793,13 +1797,25 @@ body.modal-open{
 .family-relation {
     font-size: 13px;
     color: #777;
-    text-align: center;
+    text-align: left;
+    padding-left: 7px;
+    white-space: nowrap;
 }
 
 .family-name {
     font-size: 17px;
     margin-left: 0;
     text-align: left;
+    white-space: nowrap;
+}
+
+/* 두 집 사이 구분선 제거 */
+.family-row::before,
+.family-row::after,
+.family-info::before,
+.family-info::after {
+    content: none !important;
+    display: none !important;
 }
 
 
