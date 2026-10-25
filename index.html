@@ -1770,31 +1770,38 @@ body.modal-open{
 }
 
 
+
 .family-info {
     margin: 42px auto 0;
     text-align: center;
 }
 
 .family-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 55px 65px;
     align-items: baseline;
-    justify-content: center;
-    gap: 6px;
-    margin-bottom: 18px;
+    max-width: 340px;
+    margin: 0 auto 18px;
     font-size: 17px;
     color: #333;
-    white-space: nowrap;
+}
+
+.family-row > span:first-child {
+    text-align: right;
 }
 
 .family-relation {
     font-size: 13px;
     color: #777;
+    text-align: center;
 }
 
 .family-name {
     font-size: 17px;
-    margin-left: 8px;
+    margin-left: 0;
+    text-align: left;
 }
+
 
 
 </style>
